@@ -372,18 +372,26 @@ class TelegramHandler:
         try:
             logger.info("🚀 Запуск Telegram бота...")
             
-            # Сначала удаляем webhook (если был)
-            await self.application.bot.delete_webhook()
+            # ВАЖНО: удаляем webhook с очисткой
+            await self.application.bot.delete_webhook(drop_pending_updates=True)
+            logger.info("✅ Webhook очищен")
             
             # Запускаем сканер сразу
             asyncio.create_task(self.start_scanner())
             
             await self.application.initialize()
             await self.application.start()
-            await self.application.updater.start_polling()
+            
+            # ЗАПУСКАЕМ POLLING С ОЧИСТКОЙ
+            await self.application.updater.start_polling(
+                drop_pending_updates=True,  # <-- ГЛАВНОЕ ИЗМЕНЕНИЕ!
+                poll_interval=0.5,
+                timeout=10
+            )
             
             logger.info("✅ Бот успешно запущен и готов к работе!")
             logger.info("📱 Нажмите /start в Telegram для начала работы")
+            logger.info("=" * 50)
             
             while True:
                 await asyncio.sleep(1)

@@ -485,3 +485,554 @@ telegram.error.Conflict: Conflict: terminated by other getUpdates request; make 
 2026-08-06 22:52:27 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
 2026-08-06 22:52:27 - telegram_handlers - INFO - 👋 Бот завершил работу
 2026-08-06 22:52:27 - root - INFO - 👋 Бот завершил работу
+2026-08-06 23:22:09 - root - INFO - ============================================================
+2026-08-06 23:22:09 - root - INFO - 🚀 Funding Arbitrage Bot v1.0.0
+2026-08-06 23:22:09 - root - INFO - ============================================================
+2026-08-06 23:22:09 - root - INFO - 🛑 Остановка всех Python процессов...
+2026-08-06 23:23:39 - root - INFO - 
+╔═══════════════════════════════════════════════════════╗
+║                                                       ║
+║   🚀 Funding Arbitrage Bot v1.0.0                    ║
+║                                                       ║
+║   📊 Анализ фандинга на Bybit                       ║
+║   🤖 Telegram бот для арбитража                     ║
+║                                                       ║
+╚═══════════════════════════════════════════════════════╝
+    
+2026-08-06 23:23:39 - root - INFO - 📋 Текущие настройки:
+2026-08-06 23:23:39 - root - INFO -   • Минимальный фандинг: 0.05%
+2026-08-06 23:23:39 - root - INFO -   • Макс время до выплаты: 10 мин
+2026-08-06 23:23:39 - root - INFO -   • Минимальный объем: $1,000,000
+2026-08-06 23:23:39 - root - INFO -   • Интервал сканирования: 30 сек
+2026-08-06 23:23:39 - root - INFO - 
+2026-08-06 23:23:39 - root - INFO -   • Спот комиссия: 0.1% (покупка) + 0.1% (продажа)
+2026-08-06 23:23:39 - root - INFO -   • Фьючерс комиссия: 0.02% (открытие) + 0.055% (закрытие)
+2026-08-06 23:23:39 - root - INFO - ==================================================
+2026-08-06 23:23:39 - root - INFO - ✅ Проверка окружения пройдена успешно
+2026-08-06 23:23:39 - root - INFO - 📱 Инициализация Telegram бота...
+2026-08-06 23:23:39 - root - INFO - ✅ Бот успешно инициализирован
+2026-08-06 23:23:39 - root - INFO - 
+2026-08-06 23:23:39 - root - INFO - 🚀 Запуск бота...
+2026-08-06 23:23:39 - root - INFO - ⏳ Ожидайте уведомлений о найденных кандидатах
+2026-08-06 23:23:39 - root - INFO - ==================================================
+2026-08-06 23:23:39 - root - INFO - 
+2026-08-06 23:23:39 - telegram_handlers - INFO - 🚀 Запуск Telegram бота...
+2026-08-06 23:23:44 - telegram_handlers - ERROR - ❌ Критическая ошибка: Timed out
+2026-08-06 23:23:44 - root - ERROR - ❌ Критическая ошибка: Timed out
+2026-08-06 23:23:44 - root - INFO - 👋 Бот завершил работу
+2026-08-06 23:24:28 - root - INFO - 
+╔═══════════════════════════════════════════════════════╗
+║                                                       ║
+║   🚀 Funding Arbitrage Bot v1.0.0                    ║
+║                                                       ║
+║   📊 Анализ фандинга на Bybit                       ║
+║   🤖 Telegram бот для арбитража                     ║
+║                                                       ║
+╚═══════════════════════════════════════════════════════╝
+    
+2026-08-06 23:24:28 - root - INFO - 📋 Текущие настройки:
+2026-08-06 23:24:28 - root - INFO -   • Минимальный фандинг: 0.05%
+2026-08-06 23:24:28 - root - INFO -   • Макс время до выплаты: 10 мин
+2026-08-06 23:24:28 - root - INFO -   • Минимальный объем: $1,000,000
+2026-08-06 23:24:28 - root - INFO -   • Интервал сканирования: 30 сек
+2026-08-06 23:24:28 - root - INFO - 
+2026-08-06 23:24:28 - root - INFO -   • Спот комиссия: 0.1% (покупка) + 0.1% (продажа)
+2026-08-06 23:24:28 - root - INFO -   • Фьючерс комиссия: 0.02% (открытие) + 0.055% (закрытие)
+2026-08-06 23:24:28 - root - INFO - ==================================================
+2026-08-06 23:24:28 - root - INFO - ✅ Проверка окружения пройдена успешно
+2026-08-06 23:24:28 - root - INFO - 📱 Инициализация Telegram бота...
+2026-08-06 23:24:29 - root - INFO - ✅ Бот успешно инициализирован
+2026-08-06 23:24:29 - root - INFO - 
+2026-08-06 23:24:29 - root - INFO - 🚀 Запуск бота...
+2026-08-06 23:24:29 - root - INFO - ⏳ Ожидайте уведомлений о найденных кандидатах
+2026-08-06 23:24:29 - root - INFO - ==================================================
+2026-08-06 23:24:29 - root - INFO - 
+2026-08-06 23:24:29 - telegram_handlers - INFO - 🚀 Запуск Telegram бота...
+2026-08-06 23:24:29 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/deleteWebhook "HTTP/1.1 200 OK"
+2026-08-06 23:24:29 - telegram_handlers - INFO - 🔄 Запуск фонового сканера...
+2026-08-06 23:24:29 - scanner - INFO - Starting scanner with interval 30 seconds
+2026-08-06 23:24:29 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 23:24:30 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getMe "HTTP/1.1 200 OK"
+2026-08-06 23:24:30 - apscheduler.scheduler - INFO - Scheduler started
+2026-08-06 23:24:30 - telegram.ext.Application - INFO - Application started
+2026-08-06 23:24:30 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/deleteWebhook "HTTP/1.1 200 OK"
+2026-08-06 23:24:30 - telegram_handlers - INFO - ✅ Бот успешно запущен и готов к работе!
+2026-08-06 23:24:30 - telegram_handlers - INFO - 📱 Нажмите /start в Telegram для начала работы
+2026-08-06 23:24:34 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 409 Conflict"
+2026-08-06 23:24:34 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:24:34 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:24:39 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 409 Conflict"
+2026-08-06 23:24:39 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:24:39 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:24:46 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 409 Conflict"
+2026-08-06 23:24:46 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:24:46 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:24:52 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 409 Conflict"
+2026-08-06 23:24:52 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:24:52 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:25:00 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 23:25:01 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 409 Conflict"
+2026-08-06 23:25:01 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:25:01 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:25:10 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 409 Conflict"
+2026-08-06 23:25:10 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:25:10 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:25:22 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 409 Conflict"
+2026-08-06 23:25:22 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:25:22 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:25:30 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 23:25:37 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 409 Conflict"
+2026-08-06 23:25:37 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:25:37 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:25:59 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 409 Conflict"
+2026-08-06 23:25:59 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:25:59 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:26:00 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 23:26:29 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 409 Conflict"
+2026-08-06 23:26:29 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:26:29 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:26:30 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 23:27:01 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 23:27:03 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 409 Conflict"
+2026-08-06 23:27:03 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:27:03 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:27:31 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 23:27:37 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 409 Conflict"
+2026-08-06 23:27:37 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:27:37 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:28:02 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 23:28:11 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 409 Conflict"
+2026-08-06 23:28:11 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:28:11 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:28:32 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 23:28:46 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 409 Conflict"
+2026-08-06 23:28:46 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:28:46 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:29:03 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 23:29:20 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 409 Conflict"
+2026-08-06 23:29:20 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:29:20 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:29:33 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 23:29:54 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 409 Conflict"
+2026-08-06 23:29:54 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:29:54 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:30:04 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 23:30:28 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 409 Conflict"
+2026-08-06 23:30:28 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:30:28 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-06 23:30:34 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 23:30:35 - telegram.ext.Application - WARNING - Fetching updates got a asyncio.CancelledError. Ignoring as this task may onlybe closed via `Application.stop`.
+2026-08-06 23:30:35 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-08-06 23:30:35 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2026-08-06 23:30:35 - telegram.ext.Application - INFO - Application.stop() complete
+2026-08-06 23:30:35 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 23:30:35 - telegram_handlers - INFO - 👋 Бот завершил работу
+2026-08-06 23:30:35 - root - INFO - 👋 Бот завершил работу

@@ -4,81 +4,101 @@
 import sys
 import asyncio
 import logging
-import time
 from pathlib import Path
-from telegram import Bot
-from telegram.error import Conflict
 
+# Добавляем текущую директорию в путь для импорта
 sys.path.insert(0, str(Path(__file__).parent))
 
 from config import Config
 from telegram_handlers import TelegramHandler
 from utils import setup_logging
 
+# Настройка логирования
 logger = setup_logging()
 
-async def clear_webhook_with_retry(max_retries=3):
-    """Очистить webhook с повторными попытками"""
-    for attempt in range(max_retries):
-        try:
-            bot = Bot(token=Config.TELEGRAM_TOKEN)
-            webhook_info = await bot.get_webhook_info()
-            if webhook_info.url:
-                logger.info(f"🔄 Удаление webhook: {webhook_info.url}")
-                await bot.delete_webhook()
-                logger.info("✅ Webhook удален")
-            else:
-                logger.info("✅ Webhook не установлен")
-            
-            # Очищаем ожидающие обновления
-            await bot.get_updates(offset=-1, timeout=1)
-            return True
-        except Conflict as e:
-            logger.warning(f"⚠️ Конфликт при очистке (попытка {attempt + 1}/{max_retries}): {e}")
-            if attempt < max_retries - 1:
-                time.sleep(2)
-                continue
-            else:
-                logger.error("❌ Не удалось очистить webhook")
-                return False
-        except Exception as e:
-            logger.error(f"❌ Ошибка очистки webhook: {e}")
-            return False
+def check_environment():
+    """Проверка окружения перед запуском"""
+    issues = []
+    
+    # Проверяем наличие токена
+    if not Config.TELEGRAM_TOKEN or Config.TELEGRAM_TOKEN == 'YOUR_BOT_TOKEN_HERE':
+        issues.append("❌ TELEGRAM_TOKEN не установлен в файле .env")
+        issues.append("   Получите токен у @BotFather в Telegram")
+    
+    # Проверяем наличие файла .env
+    env_file = Path('.env')
+    if not env_file.exists():
+        issues.append("❌ Файл .env не найден")
+        issues.append("   Создайте .env файл из .env.example")
+    
+    if issues:
+        logger.error("=" * 50)
+        for issue in issues:
+            logger.error(issue)
+        logger.error("=" * 50)
+        return False
+    
+    logger.info("✅ Проверка окружения пройдена успешно")
+    return True
+
+def show_banner():
+    """Показать баннер при запуске"""
+    banner = """
+╔═══════════════════════════════════════════════════════╗
+║                                                       ║
+║   🚀 Funding Arbitrage Bot v1.0.0                    ║
+║                                                       ║
+║   📊 Анализ фандинга на Bybit                       ║
+║   🤖 Telegram бот для арбитража                     ║
+║                                                       ║
+╚═══════════════════════════════════════════════════════╝
+    """
+    logger.info(banner)
+    
+    # Показываем настройки
+    logger.info("📋 Текущие настройки:")
+    logger.info(f"  • Минимальный фандинг: {Config.MIN_FUNDING_RATE}%")
+    logger.info(f"  • Макс время до выплаты: {Config.MAX_MINUTES_TO_FUNDING} мин")
+    logger.info(f"  • Минимальный объем: ${Config.MIN_VOLUME_USD:,.0f}")
+    logger.info(f"  • Интервал сканирования: {Config.SCAN_INTERVAL} сек")
+    logger.info("")
+    logger.info(f"  • Спот комиссия: {Config.SPOT_MAKER_FEE}% (покупка) + {Config.SPOT_TAKER_FEE}% (продажа)")
+    logger.info(f"  • Фьючерс комиссия: {Config.FUTURES_MAKER_FEE}% (открытие) + {Config.FUTURES_TAKER_FEE}% (закрытие)")
+    logger.info("=" * 50)
 
 async def main():
     """Главная функция запуска бота"""
     try:
-        logger.info("=" * 50)
-        logger.info("🚀 Funding Arbitrage Bot v1.0.0")
-        logger.info("=" * 50)
+        # Показываем баннер
+        show_banner()
         
-        # Проверка токена
-        if not Config.TELEGRAM_TOKEN or Config.TELEGRAM_TOKEN == 'YOUR_BOT_TOKEN_HERE':
-            logger.error("❌ TELEGRAM_TOKEN не установлен!")
-            logger.error("Пожалуйста, добавьте токен в файл .env")
+        # Проверка окружения
+        if not check_environment():
+            logger.error("❌ Проверка окружения не пройдена. Бот остановлен.")
+            logger.info("")
+            logger.info("📝 Инструкция по настройке:")
+            logger.info("1. Создайте файл .env из .env.example")
+            logger.info("2. Добавьте TELEGRAM_TOKEN=ваш_токен_бота")
+            logger.info("3. Токен можно получить у @BotFather в Telegram")
             return
         
-        # Очищаем webhook перед запуском
-        if not await clear_webhook_with_retry():
-            logger.warning("⚠️ Не удалось очистить webhook, но продолжаем...")
-        
         logger.info("📱 Инициализация Telegram бота...")
+        
+        # Создаем обработчик Telegram
         bot = TelegramHandler(Config.TELEGRAM_TOKEN)
         
         logger.info("✅ Бот успешно инициализирован")
+        logger.info("")
         logger.info("🚀 Запуск бота...")
+        logger.info("⏳ Ожидайте уведомлений о найденных кандидатах")
+        logger.info("=" * 50)
+        logger.info("")
         
-        # Запускаем бота с обработкой конфликтов
-        try:
-            await bot.run()
-        except Conflict as e:
-            logger.error(f"❌ Конфликт при запуске: {e}")
-            logger.info("💡 Решение:")
-            logger.info("1. Остановите все другие экземпляры бота")
-            logger.info("2. Запустите: python force_stop.py")
-            logger.info("3. Затем запустите бота заново")
-            
+        # Запускаем бота
+        await bot.run()
+        
     except KeyboardInterrupt:
+        logger.info("")
         logger.info("⏹ Бот остановлен пользователем")
     except Exception as e:
         logger.error(f"❌ Критическая ошибка: {e}")
@@ -90,6 +110,7 @@ async def main():
 
 if __name__ == "__main__":
     try:
+        # Запускаем основную функцию
         asyncio.run(main())
     except KeyboardInterrupt:
         print("\n⏹ Бот остановлен")
