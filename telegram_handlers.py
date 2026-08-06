@@ -74,7 +74,6 @@ class TelegramHandler:
         if not self.scanner_started:
             asyncio.create_task(self.start_scanner())
         
-        # Используем простое форматирование без HTML
         welcome_text = (
             "🤖 Funding Arbitrage Bot\n"
             "========================\n\n"
@@ -103,7 +102,6 @@ class TelegramHandler:
 
     async def settings_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """Обработчик команды /settings"""
-        # Рассчитываем минимальный фандинг для прибыли
         min_profit_funding = (
             Config.SPOT_MAKER_FEE + 
             Config.SPOT_TAKER_FEE + 
@@ -192,7 +190,6 @@ class TelegramHandler:
             'minutes': minutes
         }
         
-        # Простое сообщение без HTML
         message = (
             f"🔔 Найден кандидат!\n"
             f"==================\n\n"
@@ -310,7 +307,6 @@ class TelegramHandler:
                 price=price
             )
             
-            # Формируем результат без HTML
             result_text = (
                 f"📊 {symbol}\n"
                 f"==================\n\n"
@@ -375,6 +371,9 @@ class TelegramHandler:
         """Запуск бота"""
         try:
             logger.info("🚀 Запуск Telegram бота...")
+            
+            # Сначала удаляем webhook (если был)
+            await self.application.bot.delete_webhook()
             
             # Запускаем сканер сразу
             asyncio.create_task(self.start_scanner())
