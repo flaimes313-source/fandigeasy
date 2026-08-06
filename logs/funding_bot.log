@@ -1,0 +1,252 @@
+2026-08-06 21:53:58 - root - INFO - 
+╔═══════════════════════════════════════════════════════╗
+║                                                       ║
+║   🚀 Funding Arbitrage Bot v1.0.0                    ║
+║                                                       ║
+║   📊 Анализ фандинга на Bybit                       ║
+║   🤖 Telegram бот для арбитража                     ║
+║                                                       ║
+╚═══════════════════════════════════════════════════════╝
+    
+2026-08-06 21:53:58 - root - INFO - 📋 Текущие настройки:
+2026-08-06 21:53:58 - root - INFO -   • Минимальный фандинг: 0.05%
+2026-08-06 21:53:58 - root - INFO -   • Макс время до выплаты: 10 мин
+2026-08-06 21:53:58 - root - INFO -   • Минимальный объем: $1,000,000
+2026-08-06 21:53:58 - root - INFO -   • Интервал сканирования: 30 сек
+2026-08-06 21:53:58 - root - INFO - 
+2026-08-06 21:53:58 - root - INFO -   • Спот комиссия: 0.1% (покупка) + 0.1% (продажа)
+2026-08-06 21:53:58 - root - INFO -   • Фьючерс комиссия: 0.02% (открытие) + 0.055% (закрытие)
+2026-08-06 21:53:58 - root - INFO - ==================================================
+2026-08-06 21:53:58 - root - INFO - ✅ Проверка окружения пройдена успешно
+2026-08-06 21:53:58 - root - INFO - 📱 Инициализация Telegram бота...
+2026-08-06 21:53:58 - root - INFO - ✅ Бот успешно инициализирован
+2026-08-06 21:53:58 - root - INFO - 
+2026-08-06 21:53:58 - root - INFO - 🚀 Запуск бота...
+2026-08-06 21:53:58 - root - INFO - ⏳ Ожидайте уведомлений о найденных кандидатах
+2026-08-06 21:53:58 - root - INFO - ==================================================
+2026-08-06 21:53:58 - root - INFO - 
+2026-08-06 21:53:58 - telegram_handlers - INFO - 🚀 Запуск Telegram бота...
+2026-08-06 21:54:01 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getMe "HTTP/1.1 200 OK"
+2026-08-06 21:54:01 - telegram.ext.Application - INFO - Application started
+2026-08-06 21:54:01 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/deleteWebhook "HTTP/1.1 200 OK"
+2026-08-06 21:54:01 - telegram_handlers - INFO - ✅ Бот успешно запущен и готов к работе!
+2026-08-06 21:54:01 - telegram_handlers - INFO - 📱 Нажмите /start в Telegram для начала работы
+2026-08-06 21:54:11 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 21:54:21 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 21:54:27 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 21:54:27 - telegram_handlers - INFO - 👤 Новый пользователь: 462035571 (chat_id: 462035571)
+2026-08-06 21:54:27 - telegram_handlers - ERROR - Ошибка: 'NoneType' object has no attribute 'run_once'
+2026-08-06 21:54:28 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/sendMessage "HTTP/1.1 200 OK"
+2026-08-06 21:54:37 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 21:54:47 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 21:54:57 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 21:55:08 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 21:55:13 - telegram.ext.Application - WARNING - Fetching updates got a asyncio.CancelledError. Ignoring as this task may onlybe closed via `Application.stop`.
+2026-08-06 21:55:13 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-08-06 21:55:13 - telegram.ext.Application - INFO - Application.stop() complete
+2026-08-06 21:55:13 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 21:55:13 - telegram_handlers - INFO - 👋 Бот завершил работу
+2026-08-06 21:55:13 - root - INFO - 👋 Бот завершил работу
+2026-08-06 21:57:10 - root - INFO - 
+╔═══════════════════════════════════════════════════════╗
+║                                                       ║
+║   🚀 Funding Arbitrage Bot v1.0.0                    ║
+║                                                       ║
+║   📊 Анализ фандинга на Bybit                       ║
+║   🤖 Telegram бот для арбитража                     ║
+║                                                       ║
+╚═══════════════════════════════════════════════════════╝
+    
+2026-08-06 21:57:10 - root - INFO - 📋 Текущие настройки:
+2026-08-06 21:57:10 - root - INFO -   • Минимальный фандинг: 0.05%
+2026-08-06 21:57:10 - root - INFO -   • Макс время до выплаты: 10 мин
+2026-08-06 21:57:10 - root - INFO -   • Минимальный объем: $1,000,000
+2026-08-06 21:57:10 - root - INFO -   • Интервал сканирования: 30 сек
+2026-08-06 21:57:10 - root - INFO - 
+2026-08-06 21:57:10 - root - INFO -   • Спот комиссия: 0.1% (покупка) + 0.1% (продажа)
+2026-08-06 21:57:10 - root - INFO -   • Фьючерс комиссия: 0.02% (открытие) + 0.055% (закрытие)
+2026-08-06 21:57:10 - root - INFO - ==================================================
+2026-08-06 21:57:10 - root - INFO - ✅ Проверка окружения пройдена успешно
+2026-08-06 21:57:10 - root - INFO - 📱 Инициализация Telegram бота...
+2026-08-06 21:57:10 - root - INFO - ✅ Бот успешно инициализирован
+2026-08-06 21:57:10 - root - INFO - 
+2026-08-06 21:57:10 - root - INFO - 🚀 Запуск бота...
+2026-08-06 21:57:10 - root - INFO - ⏳ Ожидайте уведомлений о найденных кандидатах
+2026-08-06 21:57:10 - root - INFO - ==================================================
+2026-08-06 21:57:10 - root - INFO - 
+2026-08-06 21:57:10 - telegram_handlers - INFO - 🚀 Запуск Telegram бота...
+2026-08-06 21:57:10 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getMe "HTTP/1.1 200 OK"
+2026-08-06 21:57:10 - apscheduler.scheduler - INFO - Scheduler started
+2026-08-06 21:57:10 - telegram.ext.Application - INFO - Application started
+2026-08-06 21:57:10 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/deleteWebhook "HTTP/1.1 200 OK"
+2026-08-06 21:57:10 - telegram_handlers - INFO - ✅ Бот успешно запущен и готов к работе!
+2026-08-06 21:57:10 - telegram_handlers - INFO - 📱 Нажмите /start в Telegram для начала работы
+2026-08-06 21:57:21 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 21:57:21 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 21:57:21 - telegram_handlers - INFO - 👤 Новый пользователь: 462035571 (chat_id: 462035571)
+2026-08-06 21:57:21 - apscheduler.scheduler - INFO - Added job "start_scanner" to job store "default"
+2026-08-06 21:57:21 - apscheduler.scheduler - INFO - Removed job 04d6512b2178496981b8f83855f6dea5
+2026-08-06 21:57:21 - apscheduler.executors.default - INFO - Running job "start_scanner (trigger: date[2026-08-06 18:57:21 UTC], next run at: 2026-08-06 18:57:21 UTC)" (scheduled at 2026-08-06 18:57:21.650860+00:00)
+2026-08-06 21:57:21 - telegram_handlers - INFO - 🔄 Запуск фонового сканера...
+2026-08-06 21:57:21 - scanner - INFO - Starting scanner with interval 30 seconds
+2026-08-06 21:57:21 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 21:57:22 - apscheduler.executors.default - INFO - Job "start_scanner (trigger: date[2026-08-06 18:57:21 UTC], next run at: 2026-08-06 18:57:21 UTC)" executed successfully
+2026-08-06 21:57:22 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/sendMessage "HTTP/1.1 400 Bad Request"
+2026-08-06 21:57:22 - telegram_handlers - ERROR - Ошибка: Can't parse entities: unsupported start tag "=" at byte offset 375
+2026-08-06 21:57:22 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/sendMessage "HTTP/1.1 200 OK"
+2026-08-06 21:57:31 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 21:57:41 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 21:57:51 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 21:57:52 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 21:58:01 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 21:58:10 - telegram.ext.Application - WARNING - Fetching updates got a asyncio.CancelledError. Ignoring as this task may onlybe closed via `Application.stop`.
+2026-08-06 21:58:10 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-08-06 21:58:10 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2026-08-06 21:58:10 - telegram.ext.Application - INFO - Application.stop() complete
+2026-08-06 21:58:10 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 21:58:10 - telegram_handlers - INFO - 👋 Бот завершил работу
+2026-08-06 21:58:10 - root - INFO - 👋 Бот завершил работу
+2026-08-06 21:59:43 - root - INFO - 
+╔═══════════════════════════════════════════════════════╗
+║                                                       ║
+║   🚀 Funding Arbitrage Bot v1.0.0                    ║
+║                                                       ║
+║   📊 Анализ фандинга на Bybit                       ║
+║   🤖 Telegram бот для арбитража                     ║
+║                                                       ║
+╚═══════════════════════════════════════════════════════╝
+    
+2026-08-06 21:59:43 - root - INFO - 📋 Текущие настройки:
+2026-08-06 21:59:43 - root - INFO -   • Минимальный фандинг: 0.05%
+2026-08-06 21:59:43 - root - INFO -   • Макс время до выплаты: 10 мин
+2026-08-06 21:59:43 - root - INFO -   • Минимальный объем: $1,000,000
+2026-08-06 21:59:43 - root - INFO -   • Интервал сканирования: 30 сек
+2026-08-06 21:59:43 - root - INFO - 
+2026-08-06 21:59:43 - root - INFO -   • Спот комиссия: 0.1% (покупка) + 0.1% (продажа)
+2026-08-06 21:59:43 - root - INFO -   • Фьючерс комиссия: 0.02% (открытие) + 0.055% (закрытие)
+2026-08-06 21:59:43 - root - INFO - ==================================================
+2026-08-06 21:59:43 - root - INFO - ✅ Проверка окружения пройдена успешно
+2026-08-06 21:59:43 - root - INFO - 📱 Инициализация Telegram бота...
+2026-08-06 21:59:44 - root - INFO - ✅ Бот успешно инициализирован
+2026-08-06 21:59:44 - root - INFO - 
+2026-08-06 21:59:44 - root - INFO - 🚀 Запуск бота...
+2026-08-06 21:59:44 - root - INFO - ⏳ Ожидайте уведомлений о найденных кандидатах
+2026-08-06 21:59:44 - root - INFO - ==================================================
+2026-08-06 21:59:44 - root - INFO - 
+2026-08-06 21:59:44 - telegram_handlers - INFO - 🚀 Запуск Telegram бота...
+2026-08-06 21:59:44 - telegram_handlers - INFO - 🔄 Запуск фонового сканера...
+2026-08-06 21:59:44 - scanner - INFO - Starting scanner with interval 30 seconds
+2026-08-06 21:59:44 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 21:59:45 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getMe "HTTP/1.1 200 OK"
+2026-08-06 21:59:45 - apscheduler.scheduler - INFO - Scheduler started
+2026-08-06 21:59:45 - telegram.ext.Application - INFO - Application started
+2026-08-06 21:59:45 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/deleteWebhook "HTTP/1.1 200 OK"
+2026-08-06 21:59:45 - telegram_handlers - INFO - ✅ Бот успешно запущен и готов к работе!
+2026-08-06 21:59:45 - telegram_handlers - INFO - 📱 Нажмите /start в Telegram для начала работы
+2026-08-06 21:59:55 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 21:59:56 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 21:59:56 - telegram_handlers - INFO - 👤 Новый пользователь: 462035571 (chat_id: 462035571)
+2026-08-06 21:59:56 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/sendMessage "HTTP/1.1 400 Bad Request"
+2026-08-06 21:59:56 - telegram_handlers - ERROR - Ошибка: Can't parse entities: unsupported start tag "=" at byte offset 376
+2026-08-06 21:59:56 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/sendMessage "HTTP/1.1 200 OK"
+2026-08-06 22:00:06 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:00:14 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 22:00:16 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:00:26 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:00:36 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:00:45 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 22:00:46 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:00:56 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:01:06 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:01:15 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 22:01:16 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:01:26 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:01:37 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:01:45 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 22:01:47 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:01:57 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:02:07 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:02:16 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 22:02:17 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:02:27 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:02:37 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:02:46 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 22:02:47 - telegram.ext.Application - WARNING - Fetching updates got a asyncio.CancelledError. Ignoring as this task may onlybe closed via `Application.stop`.
+2026-08-06 22:02:47 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-08-06 22:02:47 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2026-08-06 22:02:47 - telegram.ext.Application - INFO - Application.stop() complete
+2026-08-06 22:02:47 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:02:47 - telegram_handlers - INFO - 👋 Бот завершил работу
+2026-08-06 22:02:47 - root - INFO - 👋 Бот завершил работу
+2026-08-06 22:03:23 - root - INFO - 
+╔═══════════════════════════════════════════════════════╗
+║                                                       ║
+║   🚀 Funding Arbitrage Bot v1.0.0                    ║
+║                                                       ║
+║   📊 Анализ фандинга на Bybit                       ║
+║   🤖 Telegram бот для арбитража                     ║
+║                                                       ║
+╚═══════════════════════════════════════════════════════╝
+    
+2026-08-06 22:03:23 - root - INFO - 📋 Текущие настройки:
+2026-08-06 22:03:23 - root - INFO -   • Минимальный фандинг: 0.05%
+2026-08-06 22:03:23 - root - INFO -   • Макс время до выплаты: 10 мин
+2026-08-06 22:03:23 - root - INFO -   • Минимальный объем: $1,000,000
+2026-08-06 22:03:23 - root - INFO -   • Интервал сканирования: 30 сек
+2026-08-06 22:03:23 - root - INFO - 
+2026-08-06 22:03:23 - root - INFO -   • Спот комиссия: 0.1% (покупка) + 0.1% (продажа)
+2026-08-06 22:03:23 - root - INFO -   • Фьючерс комиссия: 0.02% (открытие) + 0.055% (закрытие)
+2026-08-06 22:03:23 - root - INFO - ==================================================
+2026-08-06 22:03:23 - root - INFO - ✅ Проверка окружения пройдена успешно
+2026-08-06 22:03:23 - root - INFO - 📱 Инициализация Telegram бота...
+2026-08-06 22:03:23 - root - INFO - ✅ Бот успешно инициализирован
+2026-08-06 22:03:23 - root - INFO - 
+2026-08-06 22:03:23 - root - INFO - 🚀 Запуск бота...
+2026-08-06 22:03:23 - root - INFO - ⏳ Ожидайте уведомлений о найденных кандидатах
+2026-08-06 22:03:23 - root - INFO - ==================================================
+2026-08-06 22:03:23 - root - INFO - 
+2026-08-06 22:03:23 - telegram_handlers - INFO - 🚀 Запуск Telegram бота...
+2026-08-06 22:03:23 - telegram_handlers - INFO - 🔄 Запуск фонового сканера...
+2026-08-06 22:03:23 - scanner - INFO - Starting scanner with interval 30 seconds
+2026-08-06 22:03:23 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 22:03:24 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getMe "HTTP/1.1 200 OK"
+2026-08-06 22:03:24 - apscheduler.scheduler - INFO - Scheduler started
+2026-08-06 22:03:24 - telegram.ext.Application - INFO - Application started
+2026-08-06 22:03:24 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/deleteWebhook "HTTP/1.1 200 OK"
+2026-08-06 22:03:24 - telegram_handlers - INFO - ✅ Бот успешно запущен и готов к работе!
+2026-08-06 22:03:24 - telegram_handlers - INFO - 📱 Нажмите /start в Telegram для начала работы
+2026-08-06 22:03:34 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:03:34 - telegram_handlers - INFO - 👤 Новый пользователь: 462035571 (chat_id: 462035571)
+2026-08-06 22:03:34 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/sendMessage "HTTP/1.1 200 OK"
+2026-08-06 22:03:44 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:03:54 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:03:54 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 22:04:04 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:04:14 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:04:24 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:04:24 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 22:04:34 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:04:44 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:04:54 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:04:55 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 22:05:04 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:05:14 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:05:24 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:05:27 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 22:05:35 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:05:45 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:05:55 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:05:57 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 22:06:03 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:06:03 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/sendMessage "HTTP/1.1 200 OK"
+2026-08-06 22:06:13 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:06:23 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:06:27 - scanner - INFO - Starting scan for funding opportunities...
+2026-08-06 22:06:33 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:06:34 - telegram.ext.Application - WARNING - Fetching updates got a asyncio.CancelledError. Ignoring as this task may onlybe closed via `Application.stop`.
+2026-08-06 22:06:34 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-08-06 22:06:34 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2026-08-06 22:06:34 - telegram.ext.Application - INFO - Application.stop() complete
+2026-08-06 22:06:37 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
+2026-08-06 22:06:37 - telegram_handlers - INFO - 👋 Бот завершил работу
+2026-08-06 22:06:37 - root - INFO - 👋 Бот завершил работу
