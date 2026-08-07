@@ -2,7 +2,6 @@ import os
 from dotenv import load_dotenv
 from pathlib import Path
 
-# Загружаем переменные из .env
 env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
 
@@ -14,10 +13,14 @@ class Config:
     BYBIT_API_KEY = os.getenv('BYBIT_API_KEY', '')
     BYBIT_API_SECRET = os.getenv('BYBIT_API_SECRET', '')
     
-    # Filter settings (можно переопределить через .env)
-    MIN_FUNDING_RATE = float(os.getenv('MIN_FUNDING_RATE', 0.05))
+    # Filter settings
+    MIN_FUNDING_RATE = float(os.getenv('MIN_FUNDING_RATE', 0.02))  # 0.02% для тестов
     MAX_MINUTES_TO_FUNDING = int(os.getenv('MAX_MINUTES_TO_FUNDING', 10))
     MIN_VOLUME_USD = int(os.getenv('MIN_VOLUME_USD', 1000000))
+    
+    # Notification settings
+    NOTIFY_NEAR_FUNDING = bool(os.getenv('NOTIFY_NEAR_FUNDING', True))  # Уведомлять о "скоро"
+    NEAR_MINUTES_THRESHOLD = int(os.getenv('NEAR_MINUTES_THRESHOLD', 60))  # 60 минут
     
     # Commission rates
     SPOT_MAKER_FEE = float(os.getenv('SPOT_MAKER_FEE', 0.1))
@@ -35,7 +38,6 @@ class Config:
     LOG_LEVEL = os.getenv('LOG_LEVEL', 'INFO')
     LOG_FILE = os.getenv('LOG_FILE', 'funding_bot.log')
     
-    # Проверка наличия токена
     @classmethod
     def validate(cls):
         if not cls.TELEGRAM_TOKEN or cls.TELEGRAM_TOKEN == 'YOUR_BOT_TOKEN_HERE':

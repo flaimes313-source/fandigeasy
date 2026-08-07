@@ -2764,3 +2764,501 @@ telegram.error.Conflict: Conflict: terminated by other getUpdates request; make 
 2026-08-07 00:31:47 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8846739306:AAEAoXLwx1EpuNrXsFgZ7qG2tF65t6ggNhg/getUpdates "HTTP/1.1 200 OK"
 2026-08-07 00:31:47 - telegram_handlers - INFO - 👋 Бот завершил работу
 2026-08-07 00:31:47 - root - INFO - 👋 Бот завершил работу
+2026-08-07 16:51:06 - root - INFO - 
+╔═══════════════════════════════════════════════════════╗
+║                                                       ║
+║   🚀 Funding Arbitrage Bot v1.0.0                    ║
+║                                                       ║
+║   📊 Анализ фандинга на Bybit                       ║
+║   🤖 Telegram бот для арбитража                     ║
+║                                                       ║
+╚═══════════════════════════════════════════════════════╝
+    
+2026-08-07 16:51:06 - root - INFO - 📋 Текущие настройки:
+2026-08-07 16:51:06 - root - INFO -   • Минимальный фандинг: 0.02%
+2026-08-07 16:51:06 - root - INFO -   • Макс время до выплаты: 10 мин
+2026-08-07 16:51:06 - root - INFO -   • Минимальный объем: $1,000,000
+2026-08-07 16:51:06 - root - INFO -   • Интервал сканирования: 30 сек
+2026-08-07 16:51:06 - root - INFO - 
+2026-08-07 16:51:06 - root - INFO -   • Спот комиссия: 0.1% (покупка) + 0.1% (продажа)
+2026-08-07 16:51:06 - root - INFO -   • Фьючерс комиссия: 0.02% (открытие) + 0.055% (закрытие)
+2026-08-07 16:51:06 - root - INFO - ==================================================
+2026-08-07 16:51:06 - root - INFO - ✅ Проверка окружения пройдена успешно
+2026-08-07 16:51:06 - root - INFO - 📱 Инициализация Telegram бота...
+2026-08-07 16:51:06 - root - INFO - ✅ Бот успешно инициализирован
+2026-08-07 16:51:06 - root - INFO - 
+2026-08-07 16:51:06 - root - INFO - 🚀 Запуск бота...
+2026-08-07 16:51:06 - root - INFO - ⏳ Ожидайте уведомлений о найденных кандидатах
+2026-08-07 16:51:06 - root - INFO - ==================================================
+2026-08-07 16:51:06 - root - INFO - 
+2026-08-07 16:51:06 - telegram_handlers - INFO - 🚀 Запуск Telegram бота...
+2026-08-07 16:51:06 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/deleteWebhook "HTTP/1.1 200 OK"
+2026-08-07 16:51:06 - telegram_handlers - INFO - ✅ Webhook очищен
+2026-08-07 16:51:06 - telegram_handlers - INFO - 🔄 Запуск фонового сканера...
+2026-08-07 16:51:06 - scanner - INFO - 🔄 Scanner started with interval 30 seconds
+2026-08-07 16:51:07 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 16:51:07 - exchange - INFO - ✅ Загружено 557 спотовых символов
+2026-08-07 16:51:07 - exchange - INFO - 🔍 0GUSDT: funding=0.0050%, nextFundingTime=1786118400000
+2026-08-07 16:51:07 - exchange - INFO - ==================================================
+2026-08-07 16:51:07 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 16:51:07 - exchange - INFO - ==================================================
+2026-08-07 16:51:07 - exchange - INFO -   Всего USDT фьючерсов:    805
+2026-08-07 16:51:07 - exchange - INFO -   Есть спотовый рынок:     294
+2026-08-07 16:51:07 - exchange - INFO -   Funding > 0:             223
+2026-08-07 16:51:07 - exchange - INFO -   Funding >= 0.02%:        4
+2026-08-07 16:51:07 - exchange - INFO -   Funding >= 0.05%:        4
+2026-08-07 16:51:07 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 16:51:07 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 16:51:07 - exchange - INFO - --------------------------------------------------
+2026-08-07 16:51:07 - exchange - INFO -   ✅ НАЙДЕНО КАНДИДАТОВ:    0
+2026-08-07 16:51:07 - exchange - INFO - ==================================================
+2026-08-07 16:51:07 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getMe "HTTP/1.1 200 OK"
+2026-08-07 16:51:07 - apscheduler.scheduler - INFO - Scheduler started
+2026-08-07 16:51:07 - telegram.ext.Application - INFO - Application started
+2026-08-07 16:51:07 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/deleteWebhook "HTTP/1.1 200 OK"
+2026-08-07 16:51:07 - telegram_handlers - INFO - ✅ Бот успешно запущен и готов к работе!
+2026-08-07 16:51:07 - telegram_handlers - INFO - 📱 Нажмите /start в Telegram для начала работы
+2026-08-07 16:51:07 - telegram_handlers - INFO - ==================================================
+2026-08-07 16:51:17 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 16:51:18 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 16:51:18 - telegram_handlers - INFO - 👤 Новый пользователь: 462035571 (chat_id: 462035571)
+2026-08-07 16:51:19 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/sendMessage "HTTP/1.1 200 OK"
+2026-08-07 16:51:29 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 16:51:37 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 16:51:37 - exchange - INFO - 🔍 0GUSDT: funding=0.0050%, nextFundingTime=1786118400000
+2026-08-07 16:51:37 - exchange - INFO - ==================================================
+2026-08-07 16:51:37 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 16:51:37 - exchange - INFO - ==================================================
+2026-08-07 16:51:37 - exchange - INFO -   Всего USDT фьючерсов:    805
+2026-08-07 16:51:37 - exchange - INFO -   Есть спотовый рынок:     294
+2026-08-07 16:51:37 - exchange - INFO -   Funding > 0:             223
+2026-08-07 16:51:37 - exchange - INFO -   Funding >= 0.02%:        4
+2026-08-07 16:51:37 - exchange - INFO -   Funding >= 0.05%:        4
+2026-08-07 16:51:37 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 16:51:37 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 16:51:37 - exchange - INFO - --------------------------------------------------
+2026-08-07 16:51:37 - exchange - INFO -   ✅ НАЙДЕНО КАНДИДАТОВ:    0
+2026-08-07 16:51:37 - exchange - INFO - ==================================================
+2026-08-07 16:51:39 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 16:51:50 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 16:52:01 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 16:52:08 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 16:52:08 - exchange - INFO - 🔍 0GUSDT: funding=0.0050%, nextFundingTime=1786118400000
+2026-08-07 16:52:08 - exchange - INFO - ==================================================
+2026-08-07 16:52:08 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 16:52:08 - exchange - INFO - ==================================================
+2026-08-07 16:52:08 - exchange - INFO -   Всего USDT фьючерсов:    805
+2026-08-07 16:52:08 - exchange - INFO -   Есть спотовый рынок:     294
+2026-08-07 16:52:08 - exchange - INFO -   Funding > 0:             224
+2026-08-07 16:52:08 - exchange - INFO -   Funding >= 0.02%:        4
+2026-08-07 16:52:08 - exchange - INFO -   Funding >= 0.05%:        4
+2026-08-07 16:52:08 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 16:52:08 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 16:52:08 - exchange - INFO - --------------------------------------------------
+2026-08-07 16:52:08 - exchange - INFO -   ✅ НАЙДЕНО КАНДИДАТОВ:    0
+2026-08-07 16:52:08 - exchange - INFO - ==================================================
+2026-08-07 16:52:11 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 16:52:22 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 16:52:32 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 16:52:38 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 16:52:38 - exchange - INFO - 🔍 0GUSDT: funding=0.0050%, nextFundingTime=1786118400000
+2026-08-07 16:52:38 - exchange - INFO - ==================================================
+2026-08-07 16:52:38 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 16:52:38 - exchange - INFO - ==================================================
+2026-08-07 16:52:38 - exchange - INFO -   Всего USDT фьючерсов:    805
+2026-08-07 16:52:38 - exchange - INFO -   Есть спотовый рынок:     294
+2026-08-07 16:52:38 - exchange - INFO -   Funding > 0:             224
+2026-08-07 16:52:38 - exchange - INFO -   Funding >= 0.02%:        4
+2026-08-07 16:52:38 - exchange - INFO -   Funding >= 0.05%:        4
+2026-08-07 16:52:38 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 16:52:38 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 16:52:38 - exchange - INFO - --------------------------------------------------
+2026-08-07 16:52:38 - exchange - INFO -   ✅ НАЙДЕНО КАНДИДАТОВ:    0
+2026-08-07 16:52:38 - exchange - INFO - ==================================================
+2026-08-07 16:52:43 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 16:52:53 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 16:53:04 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 16:53:09 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 16:53:09 - exchange - INFO - 🔍 0GUSDT: funding=0.0050%, nextFundingTime=1786118400000
+2026-08-07 16:53:09 - exchange - INFO - ==================================================
+2026-08-07 16:53:09 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 16:53:09 - exchange - INFO - ==================================================
+2026-08-07 16:53:09 - exchange - INFO -   Всего USDT фьючерсов:    805
+2026-08-07 16:53:09 - exchange - INFO -   Есть спотовый рынок:     294
+2026-08-07 16:53:09 - exchange - INFO -   Funding > 0:             224
+2026-08-07 16:53:09 - exchange - INFO -   Funding >= 0.02%:        4
+2026-08-07 16:53:09 - exchange - INFO -   Funding >= 0.05%:        4
+2026-08-07 16:53:09 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 16:53:09 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 16:53:09 - exchange - INFO - --------------------------------------------------
+2026-08-07 16:53:09 - exchange - INFO -   ✅ НАЙДЕНО КАНДИДАТОВ:    0
+2026-08-07 16:53:09 - exchange - INFO - ==================================================
+2026-08-07 16:53:14 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 16:53:25 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 16:53:25 - telegram.ext.Updater - ERROR - Error while getting Updates: Unknown error in HTTP implementation: SSLError(1, '[SSL: DECRYPTION_FAILED_OR_BAD_RECORD_MAC] decryption failed or bad record mac (_ssl.c:2633)')
+2026-08-07 16:53:25 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpcore\_async\connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpcore\_async\http11.py", line 136, in handle_async_request
+    raise exc
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpcore\_async\http11.py", line 106, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpcore\_async\http11.py", line 177, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpcore\_async\http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpcore\_backends\anyio.py", line 35, in read
+    return await self._stream.receive(max_bytes=max_bytes)
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\anyio\streams\tls.py", line 244, in receive
+    data = await self._call_sslobject_method(self._ssl_object.read, max_bytes)
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\anyio\streams\tls.py", line 180, in _call_sslobject_method
+    result = func(*args)
+  File "C:\Python39\lib\ssl.py", line 888, in read
+    v = self._sslobj.read(len)
+ssl.SSLError: [SSL: DECRYPTION_FAILED_OR_BAD_RECORD_MAC] decryption failed or bad record mac (_ssl.c:2633)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 342, in _request_wrapper
+    raise NetworkError(f"Unknown error in HTTP implementation: {exc!r}") from exc
+telegram.error.NetworkError: Unknown error in HTTP implementation: SSLError(1, '[SSL: DECRYPTION_FAILED_OR_BAD_RECORD_MAC] decryption failed or bad record mac (_ssl.c:2633)')
+2026-08-07 16:53:36 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 16:53:39 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 16:53:39 - exchange - INFO - 🔍 0GUSDT: funding=0.0050%, nextFundingTime=1786118400000
+2026-08-07 16:53:39 - exchange - INFO - ==================================================
+2026-08-07 16:53:39 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 16:53:39 - exchange - INFO - ==================================================
+2026-08-07 16:53:39 - exchange - INFO -   Всего USDT фьючерсов:    805
+2026-08-07 16:53:39 - exchange - INFO -   Есть спотовый рынок:     294
+2026-08-07 16:53:39 - exchange - INFO -   Funding > 0:             224
+2026-08-07 16:53:39 - exchange - INFO -   Funding >= 0.02%:        4
+2026-08-07 16:53:39 - exchange - INFO -   Funding >= 0.05%:        4
+2026-08-07 16:53:39 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 16:53:39 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 16:53:39 - exchange - INFO - --------------------------------------------------
+2026-08-07 16:53:39 - exchange - INFO -   ✅ НАЙДЕНО КАНДИДАТОВ:    0
+2026-08-07 16:53:39 - exchange - INFO - ==================================================
+2026-08-07 16:53:47 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 16:53:58 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 16:53:58 - telegram.ext.Updater - ERROR - Error while getting Updates: Unknown error in HTTP implementation: SSLError(1, '[SSL: DECRYPTION_FAILED_OR_BAD_RECORD_MAC] decryption failed or bad record mac (_ssl.c:2633)')
+2026-08-07 16:53:58 - telegram.ext.Updater - ERROR - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpcore\_async\connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpcore\_async\http11.py", line 136, in handle_async_request
+    raise exc
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpcore\_async\http11.py", line 106, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpcore\_async\http11.py", line 177, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpcore\_async\http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\httpcore\_backends\anyio.py", line 35, in read
+    return await self._stream.receive(max_bytes=max_bytes)
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\anyio\streams\tls.py", line 244, in receive
+    data = await self._call_sslobject_method(self._ssl_object.read, max_bytes)
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\anyio\streams\tls.py", line 180, in _call_sslobject_method
+    result = func(*args)
+  File "C:\Python39\lib\ssl.py", line 888, in read
+    v = self._sslobj.read(len)
+ssl.SSLError: [SSL: DECRYPTION_FAILED_OR_BAD_RECORD_MAC] decryption failed or bad record mac (_ssl.c:2633)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Alexandr\Desktop\Трейдинг\Fandingeasy\venv\lib\site-packages\telegram\request\_baserequest.py", line 342, in _request_wrapper
+    raise NetworkError(f"Unknown error in HTTP implementation: {exc!r}") from exc
+telegram.error.NetworkError: Unknown error in HTTP implementation: SSLError(1, '[SSL: DECRYPTION_FAILED_OR_BAD_RECORD_MAC] decryption failed or bad record mac (_ssl.c:2633)')
+2026-08-07 16:54:09 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 16:54:09 - exchange - INFO - 🔍 0GUSDT: funding=0.0050%, nextFundingTime=1786118400000
+2026-08-07 16:54:09 - exchange - INFO - ==================================================
+2026-08-07 16:54:09 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 16:54:09 - exchange - INFO - ==================================================
+2026-08-07 16:54:09 - exchange - INFO -   Всего USDT фьючерсов:    805
+2026-08-07 16:54:09 - exchange - INFO -   Есть спотовый рынок:     294
+2026-08-07 16:54:09 - exchange - INFO -   Funding > 0:             221
+2026-08-07 16:54:09 - exchange - INFO -   Funding >= 0.02%:        4
+2026-08-07 16:54:09 - exchange - INFO -   Funding >= 0.05%:        4
+2026-08-07 16:54:09 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 16:54:09 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 16:54:09 - exchange - INFO - --------------------------------------------------
+2026-08-07 16:54:09 - exchange - INFO -   ✅ НАЙДЕНО КАНДИДАТОВ:    0
+2026-08-07 16:54:09 - exchange - INFO - ==================================================
+2026-08-07 16:54:09 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 16:54:20 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 16:54:22 - telegram.ext.Application - WARNING - Fetching updates got a asyncio.CancelledError. Ignoring as this task may onlybe closed via `Application.stop`.
+2026-08-07 16:54:22 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-08-07 16:54:22 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2026-08-07 16:54:22 - telegram.ext.Application - INFO - Application.stop() complete
+2026-08-07 16:54:25 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 16:54:25 - telegram_handlers - INFO - 👋 Бот завершил работу
+2026-08-07 16:54:25 - root - INFO - 👋 Бот завершил работу
+2026-08-07 17:11:47 - root - INFO - 
+╔═══════════════════════════════════════════════════════╗
+║                                                       ║
+║   🚀 Funding Arbitrage Bot v1.0.0                    ║
+║                                                       ║
+║   📊 Анализ фандинга на Bybit                       ║
+║   🤖 Telegram бот для арбитража                     ║
+║                                                       ║
+╚═══════════════════════════════════════════════════════╝
+    
+2026-08-07 17:11:47 - root - INFO - 📋 Текущие настройки:
+2026-08-07 17:11:47 - root - INFO -   • Минимальный фандинг: 0.02%
+2026-08-07 17:11:47 - root - INFO -   • Макс время до выплаты: 10 мин
+2026-08-07 17:11:47 - root - INFO -   • Минимальный объем: $1,000,000
+2026-08-07 17:11:47 - root - INFO -   • Интервал сканирования: 30 сек
+2026-08-07 17:11:47 - root - INFO - 
+2026-08-07 17:11:47 - root - INFO -   • Спот комиссия: 0.1% (покупка) + 0.1% (продажа)
+2026-08-07 17:11:47 - root - INFO -   • Фьючерс комиссия: 0.02% (открытие) + 0.055% (закрытие)
+2026-08-07 17:11:47 - root - INFO - ==================================================
+2026-08-07 17:11:47 - root - INFO - ✅ Проверка окружения пройдена успешно
+2026-08-07 17:11:47 - root - INFO - 📱 Инициализация Telegram бота...
+2026-08-07 17:11:47 - root - INFO - ✅ Бот успешно инициализирован
+2026-08-07 17:11:47 - root - INFO - 
+2026-08-07 17:11:47 - root - INFO - 🚀 Запуск бота...
+2026-08-07 17:11:47 - root - INFO - ⏳ Ожидайте уведомлений о найденных кандидатах
+2026-08-07 17:11:47 - root - INFO - ==================================================
+2026-08-07 17:11:47 - root - INFO - 
+2026-08-07 17:11:47 - telegram_handlers - INFO - 🚀 Запуск Telegram бота...
+2026-08-07 17:11:47 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/deleteWebhook "HTTP/1.1 200 OK"
+2026-08-07 17:11:47 - telegram_handlers - INFO - ✅ Webhook очищен
+2026-08-07 17:11:47 - telegram_handlers - INFO - 🔄 Запуск фонового сканера...
+2026-08-07 17:11:47 - scanner - INFO - 🔄 Scanner started with interval 30 seconds
+2026-08-07 17:11:47 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:11:48 - exchange - INFO - ✅ Загружено 557 спотовых символов
+2026-08-07 17:11:48 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:11:48
+2026-08-07 17:11:48 - exchange - INFO - 🔍 TACUSDT | funding=0.0733% | next=2026-08-07 16:00:00 UTC | minutes=108
+2026-08-07 17:11:48 - exchange - INFO - ==================================================
+2026-08-07 17:11:48 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:11:48 - exchange - INFO - ==================================================
+2026-08-07 17:11:48 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:11:48 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:11:48 - exchange - INFO -   Funding > 0:              218
+2026-08-07 17:11:48 - exchange - INFO -   Funding >= 0.02%:         4
+2026-08-07 17:11:48 - exchange - INFO -   Funding >= 0.05%:         4
+2026-08-07 17:11:48 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:11:48 - exchange - INFO -   Объем >= $1,000,000: 1
+2026-08-07 17:11:48 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:11:48 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:11:48 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:11:48 - exchange - INFO - ==================================================
+2026-08-07 17:11:48 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getMe "HTTP/1.1 200 OK"
+2026-08-07 17:11:48 - apscheduler.scheduler - INFO - Scheduler started
+2026-08-07 17:11:48 - telegram.ext.Application - INFO - Application started
+2026-08-07 17:11:48 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/deleteWebhook "HTTP/1.1 200 OK"
+2026-08-07 17:11:48 - telegram_handlers - INFO - ✅ Бот успешно запущен и готов к работе!
+2026-08-07 17:11:48 - telegram_handlers - INFO - 📱 Нажмите /start в Telegram для начала работы
+2026-08-07 17:11:48 - telegram_handlers - INFO - ==================================================
+2026-08-07 17:11:58 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:12:06 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:12:06 - telegram_handlers - INFO - 👤 Новый пользователь: 462035571 (chat_id: 462035571)
+2026-08-07 17:12:06 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/sendMessage "HTTP/1.1 200 OK"
+2026-08-07 17:12:16 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:12:18 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:12:18 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:12:18
+2026-08-07 17:12:18 - exchange - INFO - 🔍 TACUSDT | funding=0.0735% | next=2026-08-07 16:00:00 UTC | minutes=107
+2026-08-07 17:12:18 - exchange - INFO - ==================================================
+2026-08-07 17:12:18 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:12:18 - exchange - INFO - ==================================================
+2026-08-07 17:12:18 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:12:18 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:12:18 - exchange - INFO -   Funding > 0:              215
+2026-08-07 17:12:18 - exchange - INFO -   Funding >= 0.02%:         4
+2026-08-07 17:12:18 - exchange - INFO -   Funding >= 0.05%:         4
+2026-08-07 17:12:18 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:12:18 - exchange - INFO -   Объем >= $1,000,000: 1
+2026-08-07 17:12:18 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:12:18 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:12:18 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:12:18 - exchange - INFO - ==================================================
+2026-08-07 17:12:27 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:12:37 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:12:48 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:12:48 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:12:48 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:12:48
+2026-08-07 17:12:48 - exchange - INFO - 🔍 TACUSDT | funding=0.0735% | next=2026-08-07 16:00:00 UTC | minutes=107
+2026-08-07 17:12:48 - exchange - INFO - ==================================================
+2026-08-07 17:12:48 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:12:48 - exchange - INFO - ==================================================
+2026-08-07 17:12:48 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:12:48 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:12:48 - exchange - INFO -   Funding > 0:              215
+2026-08-07 17:12:48 - exchange - INFO -   Funding >= 0.02%:         4
+2026-08-07 17:12:48 - exchange - INFO -   Funding >= 0.05%:         4
+2026-08-07 17:12:48 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:12:48 - exchange - INFO -   Объем >= $1,000,000: 1
+2026-08-07 17:12:48 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:12:48 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:12:48 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:12:48 - exchange - INFO - ==================================================
+2026-08-07 17:12:59 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:13:09 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:13:19 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:13:19 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:13:19
+2026-08-07 17:13:19 - exchange - INFO - 🔍 TACUSDT | funding=0.0742% | next=2026-08-07 16:00:00 UTC | minutes=106
+2026-08-07 17:13:19 - exchange - INFO - ==================================================
+2026-08-07 17:13:19 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:13:19 - exchange - INFO - ==================================================
+2026-08-07 17:13:19 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:13:19 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:13:19 - exchange - INFO -   Funding > 0:              215
+2026-08-07 17:13:19 - exchange - INFO -   Funding >= 0.02%:         4
+2026-08-07 17:13:19 - exchange - INFO -   Funding >= 0.05%:         4
+2026-08-07 17:13:19 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:13:19 - exchange - INFO -   Объем >= $1,000,000: 1
+2026-08-07 17:13:19 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:13:19 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:13:19 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:13:19 - exchange - INFO - ==================================================
+2026-08-07 17:13:20 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:13:30 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:13:41 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:13:49 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:13:49 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:13:49
+2026-08-07 17:13:49 - exchange - INFO - 🔍 TACUSDT | funding=0.0742% | next=2026-08-07 16:00:00 UTC | minutes=106
+2026-08-07 17:13:49 - exchange - INFO - ==================================================
+2026-08-07 17:13:49 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:13:49 - exchange - INFO - ==================================================
+2026-08-07 17:13:49 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:13:49 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:13:49 - exchange - INFO -   Funding > 0:              215
+2026-08-07 17:13:49 - exchange - INFO -   Funding >= 0.02%:         4
+2026-08-07 17:13:49 - exchange - INFO -   Funding >= 0.05%:         4
+2026-08-07 17:13:49 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:13:49 - exchange - INFO -   Объем >= $1,000,000: 1
+2026-08-07 17:13:49 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:13:49 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:13:49 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:13:49 - exchange - INFO - ==================================================
+2026-08-07 17:13:51 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:14:02 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:14:12 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:14:19 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:14:19 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:14:19
+2026-08-07 17:14:19 - exchange - INFO - 🔍 TACUSDT | funding=0.0739% | next=2026-08-07 16:00:00 UTC | minutes=105
+2026-08-07 17:14:19 - exchange - INFO - ==================================================
+2026-08-07 17:14:19 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:14:19 - exchange - INFO - ==================================================
+2026-08-07 17:14:19 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:14:19 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:14:19 - exchange - INFO -   Funding > 0:              216
+2026-08-07 17:14:19 - exchange - INFO -   Funding >= 0.02%:         4
+2026-08-07 17:14:19 - exchange - INFO -   Funding >= 0.05%:         4
+2026-08-07 17:14:19 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:14:19 - exchange - INFO -   Объем >= $1,000,000: 1
+2026-08-07 17:14:19 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:14:19 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:14:19 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:14:19 - exchange - INFO - ==================================================
+2026-08-07 17:14:23 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:14:34 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:14:44 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:14:50 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:14:50 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:14:50
+2026-08-07 17:14:50 - exchange - INFO - 🔍 TACUSDT | funding=0.0739% | next=2026-08-07 16:00:00 UTC | minutes=105
+2026-08-07 17:14:50 - exchange - INFO - ==================================================
+2026-08-07 17:14:50 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:14:50 - exchange - INFO - ==================================================
+2026-08-07 17:14:50 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:14:50 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:14:50 - exchange - INFO -   Funding > 0:              216
+2026-08-07 17:14:50 - exchange - INFO -   Funding >= 0.02%:         4
+2026-08-07 17:14:50 - exchange - INFO -   Funding >= 0.05%:         4
+2026-08-07 17:14:50 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:14:50 - exchange - INFO -   Объем >= $1,000,000: 1
+2026-08-07 17:14:50 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:14:50 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:14:50 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:14:50 - exchange - INFO - ==================================================
+2026-08-07 17:14:55 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:15:05 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:15:06 - telegram.ext.Application - WARNING - Fetching updates got a asyncio.CancelledError. Ignoring as this task may onlybe closed via `Application.stop`.
+2026-08-07 17:15:06 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-08-07 17:15:06 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2026-08-07 17:15:06 - telegram.ext.Application - INFO - Application.stop() complete
+2026-08-07 17:15:10 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:15:10 - telegram_handlers - INFO - 👋 Бот завершил работу
+2026-08-07 17:15:10 - root - INFO - 👋 Бот завершил работу
