@@ -1,5 +1,6 @@
 import logging
 import asyncio
+import time  # <-- ДОБАВЛЕНО!
 from datetime import datetime
 from typing import Dict, List, Optional
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
