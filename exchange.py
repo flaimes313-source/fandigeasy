@@ -24,9 +24,10 @@ class BybitExchange:
         self.tickers_cache_time = 0
         self.tickers_cache_duration = 10  # 10 секунд
         
-        # Для хранения статистики (для команды /status)
+        # Для хранения статистики
         self._last_stats: Optional[Dict] = None
         self._last_scan_time: Optional[str] = None
+        self._last_candidates: List[Dict] = []
 
     def get_spot_symbols(self) -> Set[str]:
         """Получить список всех спотовых символов"""
@@ -71,12 +72,16 @@ class BybitExchange:
         return {}
 
     def get_last_stats(self) -> Dict:
-        """Получить последнюю статистику для команды /status"""
+        """Получить последнюю статистику"""
         return self._last_stats
     
     def get_last_scan_time(self) -> str:
         """Получить время последнего сканирования"""
         return self._last_scan_time
+    
+    def get_last_candidates(self) -> List[Dict]:
+        """Получить последних кандидатов"""
+        return self._last_candidates
 
     def get_funding_candidates(self) -> List[Dict]:
         """
@@ -93,21 +98,22 @@ class BybitExchange:
             'time_ok': 0,
             'volume_ok': 0,
             'candidates': 0,
-            'near_funding': 0  # < 60 минут
+            'near_funding': 0
         }
         
         candidates = []
-        near_candidates = []  # Кандидаты с funding > 0.05% но до выплаты > 10 минут
+        near_candidates = []
         
-        # 1. Получаем все тикеры (1 запрос)
+        # 1. Получаем все тикеры
         tickers = self.get_all_tickers("linear")
         if not tickers:
             logger.warning("❌ Нет данных о тикерах")
             self._last_stats = stats
             self._last_scan_time = datetime.utcfromtimestamp(int(time.time())).strftime('%Y-%m-%d %H:%M:%S UTC')
+            self._last_candidates = []
             return candidates
         
-        # 2. Получаем спотовые символы (1 запрос, кешируется)
+        # 2. Получаем спотовые символы
         spot_symbols = self.get_spot_symbols()
         stats['total'] = len(tickers)
         
@@ -115,10 +121,8 @@ class BybitExchange:
         current_time_sec = int(time.time())
         current_time_ms = int(time.time() * 1000)
         
-        # Логируем время для диагностики
         logger.info(f"🕐 Текущее время UTC: {datetime.utcfromtimestamp(current_time_sec).strftime('%Y-%m-%d %H:%M:%S')}")
         
-        # Счетчик для дебага
         debug_count = 0
         
         for symbol, ticker in tickers.items():
@@ -138,7 +142,7 @@ class BybitExchange:
             if funding_rate_raw is None:
                 continue
                 
-            funding_rate = float(funding_rate_raw) * 100  # в процентах
+            funding_rate = float(funding_rate_raw) * 100
             
             # Статистика по funding
             if funding_rate > 0:
@@ -158,17 +162,13 @@ class BybitExchange:
             # Получаем время следующего фандинга
             next_funding_time_ms = ticker.get('nextFundingTime')
             
-            # ПРОВЕРКА: если nextFundingTime = 0, None, "" или "0"
             if not next_funding_time_ms or next_funding_time_ms == "0" or next_funding_time_ms == 0:
-                # Если нет nextFundingTime, вычисляем вручную
                 next_funding_time_ms = self._calculate_next_funding_time_ms(current_time_ms)
-                logger.debug(f"⚠️ {symbol}: nextFundingTime отсутствует, вычислен вручную")
             
-            # Конвертируем в секунды
             next_funding_time_sec = int(next_funding_time_ms) // 1000
             minutes_to_funding = (next_funding_time_sec - current_time_sec) // 60
             
-            # ДИАГНОСТИКА: выводим время для монет с высоким funding (первые 10)
+            # Диагностика для монет с высоким funding
             if debug_count < 10 and funding_rate >= 0.02:
                 next_time_str = datetime.utcfromtimestamp(next_funding_time_sec).strftime('%Y-%m-%d %H:%M:%S')
                 logger.info(
@@ -179,31 +179,39 @@ class BybitExchange:
                 )
                 debug_count += 1
             
-            # Получаем объем в USDT (используем turnover24h!)
+            # ====== РАСЧЕТ ОБЪЕМА ======
+            # Получаем объем в USDT
             volume_usd = float(ticker.get('turnover24h', 0))
             
-            # Если turnover24h нет, пробуем volume24h
+            # Если turnover24h нет или равен 0, пробуем volume24h
             if volume_usd == 0:
                 volume_raw = float(ticker.get('volume24h', 0))
                 if volume_raw > 0:
-                    # Если volume24h это количество монет, умножаем на цену
-                    if volume_raw < 1000000:
+                    # Если volume_raw < 10 млн, это количество монет
+                    if volume_raw < 10000000:
                         volume_usd = volume_raw * price
                     else:
                         volume_usd = volume_raw
                 else:
+                    # Нет данных об объеме - пропускаем
                     continue
+            
+            # Для отладки - выводим объем для монет с высоким funding
+            if funding_rate >= 0.05:
+                logger.info(f"   📊 {symbol}: объем=${volume_usd:,.0f}, turnover={ticker.get('turnover24h', 0)}, volume={ticker.get('volume24h', 0)}")
+            # =============================================
             
             # Статистика по объему
             if volume_usd >= Config.MIN_VOLUME_USD:
                 stats['volume_ok'] += 1
             else:
+                if funding_rate >= 0.05:
+                    logger.info(f"   ⚠️ {symbol}: объем ${volume_usd:,.0f} < ${Config.MIN_VOLUME_USD:,.0f} - пропущен")
                 continue
             
             # Проверяем время до выплаты
             if 0 <= minutes_to_funding <= Config.MAX_MINUTES_TO_FUNDING:
                 stats['time_ok'] += 1
-                # Кандидат подходит для входа
                 stats['candidates'] += 1
                 candidates.append({
                     'symbol': symbol,
@@ -217,10 +225,9 @@ class BybitExchange:
                     'turnover24h': volume_usd,
                     'next_funding_time': next_funding_time_sec,
                     'next_funding_time_ms': next_funding_time_ms,
-                    'status': 'ready'  # Готов к входу
+                    'status': 'ready'
                 })
             elif minutes_to_funding < 60 and minutes_to_funding > 0:
-                # Кандидат с funding > 0.05% но до выплаты > 10 минут (скоро будет готов)
                 stats['near_funding'] += 1
                 near_candidates.append({
                     'symbol': symbol,
@@ -232,21 +239,19 @@ class BybitExchange:
                     'volume_24h': volume_usd,
                     'turnover24h': volume_usd,
                     'next_funding_time': next_funding_time_sec,
-                    'status': 'near'  # Скоро будет готов
+                    'status': 'near'
                 })
         
-        # Сохраняем статистику для команды /status
+        # Сохраняем статистику и кандидатов
         self._last_stats = stats
         self._last_scan_time = datetime.utcfromtimestamp(current_time_sec).strftime('%Y-%m-%d %H:%M:%S UTC')
+        self._last_candidates = candidates + near_candidates
         
-        # Выводим полную статистику
         self._log_stats(stats, near_candidates)
         
-        # Сортируем по убыванию funding rate
         candidates.sort(key=lambda x: x['funding_rate'], reverse=True)
         near_candidates.sort(key=lambda x: x['funding_rate'], reverse=True)
         
-        # Возвращаем сначала готовых кандидатов, потом "скоро"
         return candidates + near_candidates
 
     def _log_stats(self, stats: Dict, near_candidates: List):
@@ -266,7 +271,6 @@ class BybitExchange:
         logger.info(f"  ⏳ Будут готовы < 60 мин: {stats.get('near_funding', 0)}")
         logger.info("=" * 50)
         
-        # Если есть кандидаты "скоро", показываем их
         if near_candidates:
             logger.info("⏳ Кандидаты, которые будут готовы скоро:")
             for c in near_candidates[:5]:
@@ -276,7 +280,6 @@ class BybitExchange:
 
     def _calculate_next_funding_time_ms(self, current_time_ms: int) -> int:
         """Вычислить время следующего фандинга в миллисекундах"""
-        # Bybit выплачивает фандинг в 00:00, 08:00, 16:00 UTC
         hours = [0, 8, 16]
         current_hour = (current_time_ms // 3600000) % 24
         
@@ -287,7 +290,6 @@ class BybitExchange:
         else:
             next_hour = hours[0]
         
-        # Переводим в миллисекунды
         base_time = (current_time_ms // 86400000) * 86400000
         next_time = base_time + next_hour * 3600000
         if next_time < current_time_ms:
@@ -303,4 +305,5 @@ class BybitExchange:
         self.last_cache_update = 0
         self._last_stats = None
         self._last_scan_time = None
+        self._last_candidates = []
         logger.info("🗑 Кеш очищен")

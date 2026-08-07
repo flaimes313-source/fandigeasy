@@ -189,7 +189,7 @@ class TelegramHandler:
             await update.message.reply_text(status_text)
             return
         
-        # Формируем статусное сообщение (БЕЗ HTML!)
+        # Формируем статусное сообщение
         stats = self.last_scan_stats
         
         # Статус сканера
@@ -213,22 +213,31 @@ class TelegramHandler:
             f"  ⏳ Будут готовы < 60 мин:   {stats.get('near_funding', 0)}\n"
         )
         
-        # Если есть кандидаты, показываем их
-        if self.last_candidates:
-            ready_candidates = [c for c in self.last_candidates if c.get('status') == 'ready']
-            near_candidates = [c for c in self.last_candidates if c.get('status') == 'near']
+        # ====== ПОКАЗЫВАЕМ КАНДИДАТОВ ======
+        # Получаем кандидатов из exchange через scanner
+        all_candidates = []
+        if self.scanner and hasattr(self.scanner, 'exchange'):
+            all_candidates = self.scanner.exchange.get_last_candidates() if hasattr(self.scanner.exchange, 'get_last_candidates') else []
+        
+        # Если нет из exchange, берем из сохраненных
+        if not all_candidates:
+            all_candidates = self.last_candidates
+        
+        if all_candidates:
+            ready_candidates = [c for c in all_candidates if c.get('status') == 'ready']
+            near_candidates = [c for c in all_candidates if c.get('status') == 'near']
             
             if ready_candidates:
-                status_text += f"\n🟢 ГОТОВЫЕ КАНДИДАТЫ:\n"
+                status_text += f"\n🟢 ГОТОВЫЕ К ВХОДУ ({len(ready_candidates)}):\n"
                 for c in ready_candidates[:5]:
-                    status_text += f"  • {c['symbol']}: {c['funding_rate']:.3f}% через {c['minutes_to_funding']} мин\n"
+                    status_text += f"  • {c['symbol']}: {c['funding_rate']:.3f}% через {c['minutes_to_funding']} мин, объем ${c.get('volume_24h', 0):,.0f}\n"
                 if len(ready_candidates) > 5:
                     status_text += f"  ... и еще {len(ready_candidates) - 5}\n"
             
             if near_candidates:
-                status_text += f"\n🟡 БУДУТ ГОТОВЫ СКОРО:\n"
+                status_text += f"\n🟡 БУДУТ ГОТОВЫ СКОРО ({len(near_candidates)}):\n"
                 for c in near_candidates[:5]:
-                    status_text += f"  • {c['symbol']}: {c['funding_rate']:.3f}% через {c['minutes_to_funding']} мин\n"
+                    status_text += f"  • {c['symbol']}: {c['funding_rate']:.3f}% через {c['minutes_to_funding']} мин, объем ${c.get('volume_24h', 0):,.0f}\n"
                 if len(near_candidates) > 5:
                     status_text += f"  ... и еще {len(near_candidates) - 5}\n"
         else:
@@ -533,20 +542,12 @@ class TelegramHandler:
         """Обработчик ошибок"""
         logger.error(f"Ошибка: {context.error}")
         
-        # Отправляем сообщение об ошибке только если это не команда /status
         if update and update.effective_chat:
             try:
-                # Проверяем, была ли это команда /status
-                if update.message and update.message.text and update.message.text.startswith('/status'):
-                    await context.bot.send_message(
-                        chat_id=update.effective_chat.id,
-                        text="❌ Произошла ошибка при получении статуса.\nПожалуйста, попробуйте через несколько секунд."
-                    )
-                else:
-                    await context.bot.send_message(
-                        chat_id=update.effective_chat.id,
-                        text="❌ Произошла ошибка. Бот продолжает работу."
-                    )
+                await context.bot.send_message(
+                    chat_id=update.effective_chat.id,
+                    text="❌ Произошла ошибка. Бот продолжает работу."
+                )
             except:
                 pass
 
