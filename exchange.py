@@ -98,11 +98,14 @@ class BybitExchange:
             'time_ok': 0,
             'volume_ok': 0,
             'candidates': 0,
-            'near_funding': 0
+            'near_funding': 0,
+            'ready_10min': 0,
+            'ready_60min': 0
         }
         
         candidates = []
-        near_candidates = []
+        near_candidates = []  # 10-60 минут
+        ready_candidates = []  # 0-10 минут
         
         # 1. Получаем все тикеры
         tickers = self.get_all_tickers("linear")
@@ -180,26 +183,21 @@ class BybitExchange:
                 debug_count += 1
             
             # ====== РАСЧЕТ ОБЪЕМА ======
-            # Получаем объем в USDT
             volume_usd = float(ticker.get('turnover24h', 0))
             
-            # Если turnover24h нет или равен 0, пробуем volume24h
             if volume_usd == 0:
                 volume_raw = float(ticker.get('volume24h', 0))
                 if volume_raw > 0:
-                    # Если volume_raw < 10 млн, это количество монет
                     if volume_raw < 10000000:
                         volume_usd = volume_raw * price
                     else:
                         volume_usd = volume_raw
                 else:
-                    # Нет данных об объеме - пропускаем
                     continue
             
             # Для отладки - выводим объем для монет с высоким funding
             if funding_rate >= 0.05:
                 logger.info(f"   📊 {symbol}: объем=${volume_usd:,.0f}, turnover={ticker.get('turnover24h', 0)}, volume={ticker.get('volume24h', 0)}")
-            # =============================================
             
             # Статистика по объему
             if volume_usd >= Config.MIN_VOLUME_USD:
@@ -209,38 +207,36 @@ class BybitExchange:
                     logger.info(f"   ⚠️ {symbol}: объем ${volume_usd:,.0f} < ${Config.MIN_VOLUME_USD:,.0f} - пропущен")
                 continue
             
-            # Проверяем время до выплаты
-            if 0 <= minutes_to_funding <= Config.MAX_MINUTES_TO_FUNDING:
-                stats['time_ok'] += 1
+            # ====== ПРОВЕРКА ВРЕМЕНИ ======
+            candidate_data = {
+                'symbol': symbol,
+                'spot_symbol': spot_symbol,
+                'funding_rate': funding_rate,
+                'funding_rate_raw': funding_rate_raw,
+                'price': price,
+                'minutes_to_funding': minutes_to_funding,
+                'volume_24h': volume_usd,
+                'volume_raw': ticker.get('volume24h', 0),
+                'turnover24h': volume_usd,
+                'next_funding_time': next_funding_time_sec,
+                'next_funding_time_ms': next_funding_time_ms
+            }
+            
+            # Категории по времени до выплаты
+            if 0 <= minutes_to_funding <= 10:
+                # Готов к входу (0-10 минут)
+                stats['ready_10min'] += 1
                 stats['candidates'] += 1
-                candidates.append({
-                    'symbol': symbol,
-                    'spot_symbol': spot_symbol,
-                    'funding_rate': funding_rate,
-                    'funding_rate_raw': funding_rate_raw,
-                    'price': price,
-                    'minutes_to_funding': minutes_to_funding,
-                    'volume_24h': volume_usd,
-                    'volume_raw': ticker.get('volume24h', 0),
-                    'turnover24h': volume_usd,
-                    'next_funding_time': next_funding_time_sec,
-                    'next_funding_time_ms': next_funding_time_ms,
-                    'status': 'ready'
-                })
-            elif minutes_to_funding < 60 and minutes_to_funding > 0:
+                candidate_data['status'] = 'ready'
+                candidates.append(candidate_data)
+            elif 10 < minutes_to_funding <= 60:
+                # Будет готов скоро (10-60 минут)
                 stats['near_funding'] += 1
-                near_candidates.append({
-                    'symbol': symbol,
-                    'spot_symbol': spot_symbol,
-                    'funding_rate': funding_rate,
-                    'funding_rate_raw': funding_rate_raw,
-                    'price': price,
-                    'minutes_to_funding': minutes_to_funding,
-                    'volume_24h': volume_usd,
-                    'turnover24h': volume_usd,
-                    'next_funding_time': next_funding_time_sec,
-                    'status': 'near'
-                })
+                candidate_data['status'] = 'near'
+                near_candidates.append(candidate_data)
+            elif minutes_to_funding > 60:
+                # Пока не интересно
+                continue
         
         # Сохраняем статистику и кандидатов
         self._last_stats = stats
@@ -249,6 +245,7 @@ class BybitExchange:
         
         self._log_stats(stats, near_candidates)
         
+        # Сортируем по убыванию funding rate
         candidates.sort(key=lambda x: x['funding_rate'], reverse=True)
         near_candidates.sort(key=lambda x: x['funding_rate'], reverse=True)
         
@@ -264,15 +261,16 @@ class BybitExchange:
         logger.info(f"  Funding > 0:              {stats['funding_positive']}")
         logger.info(f"  Funding >= 0.02%:         {stats['funding_002']}")
         logger.info(f"  Funding >= 0.05%:         {stats['funding_005']}")
-        logger.info(f"  До выплаты <= {Config.MAX_MINUTES_TO_FUNDING} мин: {stats['time_ok']}")
+        logger.info(f"  До выплаты <= 10 мин:    {stats['ready_10min']}")
+        logger.info(f"  До выплаты 10-60 мин:    {stats['near_funding']}")
         logger.info(f"  Объем >= ${Config.MIN_VOLUME_USD:,.0f}: {stats['volume_ok']}")
         logger.info("-" * 50)
-        logger.info(f"  ✅ ГОТОВЫ К ВХОДУ:        {stats['candidates']}")
-        logger.info(f"  ⏳ Будут готовы < 60 мин: {stats.get('near_funding', 0)}")
+        logger.info(f"  ✅ ГОТОВЫ К ВХОДУ (0-10 мин):   {stats['candidates']}")
+        logger.info(f"  ⏳ БУДУТ ГОТОВЫ (10-60 мин):    {stats['near_funding']}")
         logger.info("=" * 50)
         
         if near_candidates:
-            logger.info("⏳ Кандидаты, которые будут готовы скоро:")
+            logger.info("⏳ Кандидаты, которые будут готовы скоро (10-60 мин):")
             for c in near_candidates[:5]:
                 logger.info(f"  • {c['symbol']}: {c['funding_rate']:.3f}% через {c['minutes_to_funding']} мин")
             if len(near_candidates) > 5:

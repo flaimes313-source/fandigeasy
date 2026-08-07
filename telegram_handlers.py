@@ -20,6 +20,7 @@ logger = logging.getLogger(__name__)
 class TelegramHandler:
     def __init__(self, token: str):
         """Инициализация обработчика Telegram"""
+        
         self.application = Application.builder().token(token).build()
         self.scanner = Scanner()
         self.calculator = ProfitCalculator()
@@ -33,6 +34,9 @@ class TelegramHandler:
         self.last_scan_time: Optional[str] = None
         self.last_candidates: List[Dict] = []
         self.scan_completed = False
+        
+        # Для отслеживания уже отправленных уведомлений
+        self.sent_notifications: Dict[str, Dict] = {}  # symbol -> {time, status}
         
         # Добавляем callback для сканера
         self.scanner.add_callback(self.on_candidates_found)
@@ -107,6 +111,9 @@ class TelegramHandler:
             "• Ищутся монеты с фандингом >= 0.02%\n"
             "• Проверяется наличие спотового рынка\n"
             "• Проверяется ликвидность\n\n"
+            "📋 Уведомления:\n"
+            "• За 60 минут до выплаты - предупреждение\n"
+            "• За 10 минут до выплаты - готовность к входу\n\n"
             "📋 Команды:\n"
             "/status - показать результаты последнего сканирования\n"
             "/stop - остановить сканирование\n"
@@ -168,7 +175,6 @@ class TelegramHandler:
         """Обработчик команды /status - показывает результаты последнего сканирования"""
         chat_id = update.effective_chat.id
         
-        # Проверяем, было ли хотя бы одно сканирование
         if not self.scan_completed or not self.last_scan_stats:
             status_text = (
                 "⏳ СТАТУС: Статистика еще не доступна\n"
@@ -189,10 +195,7 @@ class TelegramHandler:
             await update.message.reply_text(status_text)
             return
         
-        # Формируем статусное сообщение
         stats = self.last_scan_stats
-        
-        # Статус сканера
         scanner_status = "⏸ Остановлен" if self.scanner.is_paused else "✅ Активен"
         
         status_text = (
@@ -206,36 +209,29 @@ class TelegramHandler:
             f"  • Funding > 0:              {stats.get('funding_positive', 0)}\n"
             f"  • Funding >= 0.02%:         {stats.get('funding_002', 0)}\n"
             f"  • Funding >= 0.05%:         {stats.get('funding_005', 0)}\n"
-            f"  • До выплаты <= 10 мин:    {stats.get('time_ok', 0)}\n"
+            f"  • До выплаты <= 10 мин:    {stats.get('ready_10min', 0)}\n"
+            f"  • До выплаты 10-60 мин:    {stats.get('near_funding', 0)}\n"
             f"  • Объем >= $1,000,000:      {stats.get('volume_ok', 0)}\n\n"
             f"🎯 РЕЗУЛЬТАТ:\n"
-            f"  ✅ Готовы к входу:          {stats.get('candidates', 0)}\n"
-            f"  ⏳ Будут готовы < 60 мин:   {stats.get('near_funding', 0)}\n"
+            f"  🟢 ГОТОВЫ К ВХОДУ (0-10 мин):   {stats.get('candidates', 0)}\n"
+            f"  🟡 БУДУТ ГОТОВЫ (10-60 мин):    {stats.get('near_funding', 0)}\n"
         )
         
-        # ====== ПОКАЗЫВАЕМ КАНДИДАТОВ ======
-        # Получаем кандидатов из exchange через scanner
-        all_candidates = []
-        if self.scanner and hasattr(self.scanner, 'exchange'):
-            all_candidates = self.scanner.exchange.get_last_candidates() if hasattr(self.scanner.exchange, 'get_last_candidates') else []
-        
-        # Если нет из exchange, берем из сохраненных
-        if not all_candidates:
-            all_candidates = self.last_candidates
+        all_candidates = self.last_candidates
         
         if all_candidates:
             ready_candidates = [c for c in all_candidates if c.get('status') == 'ready']
             near_candidates = [c for c in all_candidates if c.get('status') == 'near']
             
             if ready_candidates:
-                status_text += f"\n🟢 ГОТОВЫЕ К ВХОДУ ({len(ready_candidates)}):\n"
+                status_text += f"\n🟢 ГОТОВЫЕ К ВХОДУ (0-10 мин):\n"
                 for c in ready_candidates[:5]:
                     status_text += f"  • {c['symbol']}: {c['funding_rate']:.3f}% через {c['minutes_to_funding']} мин, объем ${c.get('volume_24h', 0):,.0f}\n"
                 if len(ready_candidates) > 5:
                     status_text += f"  ... и еще {len(ready_candidates) - 5}\n"
             
             if near_candidates:
-                status_text += f"\n🟡 БУДУТ ГОТОВЫ СКОРО ({len(near_candidates)}):\n"
+                status_text += f"\n🟡 БУДУТ ГОТОВЫ (10-60 мин):\n"
                 for c in near_candidates[:5]:
                     status_text += f"  • {c['symbol']}: {c['funding_rate']:.3f}% через {c['minutes_to_funding']} мин, объем ${c.get('volume_24h', 0):,.0f}\n"
                 if len(near_candidates) > 5:
@@ -300,7 +296,9 @@ class TelegramHandler:
             "1. Бот сканирует Bybit каждые 30 секунд\n"
             "2. Находит монеты с высоким фандингом\n"
             "3. Проверяет наличие спота и ликвидность\n"
-            "4. Отправляет уведомление в Telegram\n"
+            "4. Отправляет уведомления:\n"
+            "   • За 60 минут - предупреждение\n"
+            "   • За 10 минут - готовность к входу\n"
             "5. Вы вводите сумму для расчета прибыли\n\n"
             "⚠️ ВАЖНО:\n"
             "• Бот только информирует\n"
@@ -317,36 +315,45 @@ class TelegramHandler:
             
         logger.info(f"📊 Найдено {len(candidates)} кандидатов")
         
-        # Сохраняем результаты для команды /status
         self.last_candidates = candidates
         
-        # Отправляем только готовых кандидатов (status == 'ready')
         ready_candidates = [c for c in candidates if c.get('status') == 'ready']
         near_candidates = [c for c in candidates if c.get('status') == 'near']
         
+        current_time = int(time.time())
+        
         for chat_id in self.user_chats:
             try:
-                # Отправляем готовых кандидатов
+                # Отправляем готовых кандидатов (0-10 минут)
                 for candidate in ready_candidates[:3]:
-                    await self.send_candidate(chat_id, candidate)
-                    await asyncio.sleep(0.5)
-                
-                # Если есть кандидаты "скоро" и включено уведомление
-                if near_candidates and Config.NOTIFY_NEAR_FUNDING:
-                    near_message = (
-                        "⏳ СКОРО БУДУТ ГОТОВЫ КАНДИДАТЫ:\n\n"
-                    )
-                    for c in near_candidates[:5]:
-                        near_message += f"• {c['symbol']}: {c['funding_rate']:.3f}% через {c['minutes_to_funding']} мин\n"
-                    if len(near_candidates) > 5:
-                        near_message += f"... и еще {len(near_candidates) - 5}\n"
-                    near_message += "\nСледите за обновлениями!"
+                    # Проверяем, не отправляли ли уже уведомление
+                    symbol = candidate['symbol']
+                    key = f"{symbol}_ready"
                     
-                    await self.application.bot.send_message(
-                        chat_id=chat_id,
-                        text=near_message
-                    )
-                    await asyncio.sleep(0.5)
+                    # Отправляем только если не отправляли или если время изменилось
+                    last_sent = self.sent_notifications.get(key)
+                    if not last_sent or abs(current_time - last_sent.get('time', 0)) > 60:
+                        await self.send_candidate(chat_id, candidate, "🔴 СРОЧНО! ГОТОВ К ВХОДУ")
+                        self.sent_notifications[key] = {'time': current_time, 'status': 'ready'}
+                        await asyncio.sleep(0.5)
+                
+                # Отправляем кандидатов "скоро" (10-60 минут)
+                if near_candidates and Config.NOTIFY_NEAR_FUNDING:
+                    for candidate in near_candidates[:5]:
+                        symbol = candidate['symbol']
+                        minutes = candidate['minutes_to_funding']
+                        key = f"{symbol}_near"
+                        
+                        # Отправляем только если:
+                        # 1. Не отправляли раньше
+                        # 2. Или прошло больше 5 минут с последнего уведомления
+                        last_sent = self.sent_notifications.get(key)
+                        if not last_sent or abs(current_time - last_sent.get('time', 0)) > 300:
+                            # Отправляем первое уведомление за 60 минут
+                            if minutes <= 60:
+                                await self.send_candidate(chat_id, candidate, "🟡 СКОРО БУДЕТ ГОТОВ")
+                                self.sent_notifications[key] = {'time': current_time, 'status': 'near'}
+                                await asyncio.sleep(0.5)
                     
             except Exception as e:
                 logger.error(f"Ошибка отправки пользователю {chat_id}: {e}")
@@ -354,7 +361,7 @@ class TelegramHandler:
                     if chat_id in self.user_chats:
                         self.user_chats.remove(chat_id)
 
-    async def send_candidate(self, chat_id: int, candidate: Dict):
+    async def send_candidate(self, chat_id: int, candidate: Dict, header: str):
         """Отправить информацию о кандидате пользователю"""
         symbol = candidate['symbol']
         funding_rate = candidate['funding_rate']
@@ -369,20 +376,33 @@ class TelegramHandler:
             'minutes': minutes
         }
         
+        # Определяем эмодзи в зависимости от времени
+        if minutes <= 10:
+            emoji = "🔴"
+        elif minutes <= 30:
+            emoji = "🟡"
+        else:
+            emoji = "🟢"
+        
         # Определяем статус
-        status_emoji = "🟢" if candidate.get('status') == 'ready' else "🟡"
-        status_text = "ГОТОВ К ВХОДУ!" if candidate.get('status') == 'ready' else "Будет готов скоро"
+        if minutes <= 10:
+            status_text = "СРОЧНО! ВХОД ВОЗМОЖЕН"
+        elif minutes <= 30:
+            status_text = "СКОРО (до 30 мин)"
+        else:
+            status_text = "БУДЕТ ГОТОВ (до 60 мин)"
         
         message = (
-            f"🔔 {status_emoji} {status_text}\n"
-            f"==================\n\n"
+            f"{emoji} {header}\n"
+            f"================================\n\n"
             f"📊 Монета: {symbol}\n"
             f"💰 Funding: +{funding_rate:.3f}%\n"
             f"⏱ До выплаты: {minutes} минут\n"
             f"💵 Цена: ${price:.4f}\n"
             f"📈 Объем 24ч: ${volume:,.0f}\n"
             f"🟢 Спот: есть\n"
-            f"🟢 Фьючерс: есть\n\n"
+            f"🟢 Фьючерс: есть\n"
+            f"📌 Статус: {status_text}\n\n"
             "💰 Выберите сумму для расчета:"
         )
         
@@ -556,21 +576,41 @@ class TelegramHandler:
         try:
             logger.info("🚀 Запуск Telegram бота...")
             
-            # Удаляем webhook с очисткой
-            await self.application.bot.delete_webhook(drop_pending_updates=True)
-            logger.info("✅ Webhook очищен")
-            
-            # Запускаем сканер сразу
             asyncio.create_task(self.start_scanner())
             
-            await self.application.initialize()
+            max_retries = 5
+            for attempt in range(max_retries):
+                try:
+                    logger.info(f"🔄 Попытка подключения {attempt + 1}/{max_retries}")
+                    await asyncio.wait_for(
+                        self.application.initialize(),
+                        timeout=60.0
+                    )
+                    logger.info("✅ Подключение к Telegram успешно")
+                    break
+                except asyncio.TimeoutError:
+                    logger.warning(f"⚠️ Таймаут подключения, попытка {attempt + 1}")
+                    if attempt == max_retries - 1:
+                        logger.error("❌ Все попытки подключения провалились")
+                        raise
+                    await asyncio.sleep(5)
+                except Exception as e:
+                    logger.warning(f"⚠️ Ошибка подключения: {e}")
+                    if attempt == max_retries - 1:
+                        logger.error("❌ Все попытки подключения провалились")
+                        raise
+                    await asyncio.sleep(5)
+            
             await self.application.start()
             
-            # Запускаем polling
             await self.application.updater.start_polling(
                 drop_pending_updates=True,
-                poll_interval=0.5,
-                timeout=10
+                poll_interval=1.0,
+                timeout=60,
+                read_timeout=60,
+                write_timeout=60,
+                connect_timeout=60,
+                allowed_updates=["message", "callback_query"]
             )
             
             logger.info("✅ Бот успешно запущен и готов к работе!")
@@ -587,7 +627,10 @@ class TelegramHandler:
             raise
         finally:
             if hasattr(self, 'application') and self.application.running:
-                await self.application.stop()
-                await self.application.updater.stop()
-                await self.application.shutdown()
+                try:
+                    await self.application.stop()
+                    await self.application.updater.stop()
+                    await self.application.shutdown()
+                except:
+                    pass
                 logger.info("👋 Бот завершил работу")

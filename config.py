@@ -16,7 +16,7 @@ class Config:
     # Filter settings
     MIN_FUNDING_RATE = float(os.getenv('MIN_FUNDING_RATE', 0.02))
     MAX_MINUTES_TO_FUNDING = int(os.getenv('MAX_MINUTES_TO_FUNDING', 10))
-    MIN_VOLUME_USD = int(os.getenv('MIN_VOLUME_USD', 100000))  # Снижено для теста
+    MIN_VOLUME_USD = int(os.getenv('MIN_VOLUME_USD', 100000))
     
     # Notification settings
     NOTIFY_NEAR_FUNDING = os.getenv('NOTIFY_NEAR_FUNDING', 'true').lower() == 'true'
