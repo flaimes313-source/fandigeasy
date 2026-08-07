@@ -3262,3 +3262,867 @@ telegram.error.NetworkError: Unknown error in HTTP implementation: SSLError(1, '
 2026-08-07 17:15:10 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
 2026-08-07 17:15:10 - telegram_handlers - INFO - 👋 Бот завершил работу
 2026-08-07 17:15:10 - root - INFO - 👋 Бот завершил работу
+2026-08-07 17:28:50 - root - INFO - 
+╔═══════════════════════════════════════════════════════╗
+║                                                       ║
+║   🚀 Funding Arbitrage Bot v1.0.0                    ║
+║                                                       ║
+║   📊 Анализ фандинга на Bybit                       ║
+║   🤖 Telegram бот для арбитража                     ║
+║                                                       ║
+╚═══════════════════════════════════════════════════════╝
+    
+2026-08-07 17:28:50 - root - INFO - 📋 Текущие настройки:
+2026-08-07 17:28:50 - root - INFO -   • Минимальный фандинг: 0.02%
+2026-08-07 17:28:50 - root - INFO -   • Макс время до выплаты: 10 мин
+2026-08-07 17:28:50 - root - INFO -   • Минимальный объем: $1,000,000
+2026-08-07 17:28:50 - root - INFO -   • Интервал сканирования: 30 сек
+2026-08-07 17:28:50 - root - INFO - 
+2026-08-07 17:28:50 - root - INFO -   • Спот комиссия: 0.1% (покупка) + 0.1% (продажа)
+2026-08-07 17:28:50 - root - INFO -   • Фьючерс комиссия: 0.02% (открытие) + 0.055% (закрытие)
+2026-08-07 17:28:50 - root - INFO - ==================================================
+2026-08-07 17:28:50 - root - INFO - ✅ Проверка окружения пройдена успешно
+2026-08-07 17:28:50 - root - INFO - 📱 Инициализация Telegram бота...
+2026-08-07 17:28:50 - root - INFO - ✅ Бот успешно инициализирован
+2026-08-07 17:28:50 - root - INFO - 
+2026-08-07 17:28:50 - root - INFO - 🚀 Запуск бота...
+2026-08-07 17:28:50 - root - INFO - ⏳ Ожидайте уведомлений о найденных кандидатах
+2026-08-07 17:28:50 - root - INFO - ==================================================
+2026-08-07 17:28:50 - root - INFO - 
+2026-08-07 17:28:50 - telegram_handlers - INFO - 🚀 Запуск Telegram бота...
+2026-08-07 17:28:50 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/deleteWebhook "HTTP/1.1 200 OK"
+2026-08-07 17:28:50 - telegram_handlers - INFO - ✅ Webhook очищен
+2026-08-07 17:28:50 - telegram_handlers - INFO - 🔄 Запуск фонового сканера...
+2026-08-07 17:28:50 - scanner - INFO - 🔄 Scanner started with interval 30 seconds
+2026-08-07 17:28:52 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:28:52 - exchange - INFO - ✅ Загружено 557 спотовых символов
+2026-08-07 17:28:52 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:28:52
+2026-08-07 17:28:52 - exchange - INFO - 🔍 FHEUSDT | funding=0.0404% | next=2026-08-07 16:00:00 UTC | minutes=91
+2026-08-07 17:28:52 - exchange - INFO - 🔍 TACUSDT | funding=0.0675% | next=2026-08-07 16:00:00 UTC | minutes=91
+2026-08-07 17:28:52 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0403% | next=2026-08-07 16:00:00 UTC | minutes=91
+2026-08-07 17:28:52 - exchange - INFO - ==================================================
+2026-08-07 17:28:52 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:28:52 - exchange - INFO - ==================================================
+2026-08-07 17:28:52 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:28:52 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:28:52 - exchange - INFO -   Funding > 0:              222
+2026-08-07 17:28:52 - exchange - INFO -   Funding >= 0.02%:         3
+2026-08-07 17:28:52 - exchange - INFO -   Funding >= 0.05%:         3
+2026-08-07 17:28:52 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:28:52 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 17:28:52 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:28:52 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:28:52 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:28:52 - exchange - INFO - ==================================================
+2026-08-07 17:28:52 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getMe "HTTP/1.1 200 OK"
+2026-08-07 17:28:52 - apscheduler.scheduler - INFO - Scheduler started
+2026-08-07 17:28:52 - telegram.ext.Application - INFO - Application started
+2026-08-07 17:28:53 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/deleteWebhook "HTTP/1.1 200 OK"
+2026-08-07 17:28:53 - telegram_handlers - INFO - ✅ Бот успешно запущен и готов к работе!
+2026-08-07 17:28:53 - telegram_handlers - INFO - 📱 Нажмите /start в Telegram для начала работы
+2026-08-07 17:28:53 - telegram_handlers - INFO - ==================================================
+2026-08-07 17:28:56 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:28:56 - telegram_handlers - INFO - 👤 Новый пользователь: 462035571 (chat_id: 462035571)
+2026-08-07 17:28:56 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/sendMessage "HTTP/1.1 200 OK"
+2026-08-07 17:29:07 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:29:17 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:29:22 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:29:22 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:29:22
+2026-08-07 17:29:22 - exchange - INFO - 🔍 FHEUSDT | funding=0.0393% | next=2026-08-07 16:00:00 UTC | minutes=90
+2026-08-07 17:29:22 - exchange - INFO - 🔍 TACUSDT | funding=0.0665% | next=2026-08-07 16:00:00 UTC | minutes=90
+2026-08-07 17:29:22 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0391% | next=2026-08-07 16:00:00 UTC | minutes=90
+2026-08-07 17:29:22 - exchange - INFO - ==================================================
+2026-08-07 17:29:22 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:29:22 - exchange - INFO - ==================================================
+2026-08-07 17:29:22 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:29:22 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:29:22 - exchange - INFO -   Funding > 0:              224
+2026-08-07 17:29:22 - exchange - INFO -   Funding >= 0.02%:         3
+2026-08-07 17:29:22 - exchange - INFO -   Funding >= 0.05%:         3
+2026-08-07 17:29:22 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:29:22 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 17:29:22 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:29:22 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:29:22 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:29:22 - exchange - INFO - ==================================================
+2026-08-07 17:29:28 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:29:38 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:29:45 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:29:46 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/sendMessage "HTTP/1.1 200 OK"
+2026-08-07 17:29:52 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:29:52 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:29:52
+2026-08-07 17:29:52 - exchange - INFO - 🔍 FHEUSDT | funding=0.0393% | next=2026-08-07 16:00:00 UTC | minutes=90
+2026-08-07 17:29:52 - exchange - INFO - 🔍 TACUSDT | funding=0.0665% | next=2026-08-07 16:00:00 UTC | minutes=90
+2026-08-07 17:29:52 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0391% | next=2026-08-07 16:00:00 UTC | minutes=90
+2026-08-07 17:29:52 - exchange - INFO - ==================================================
+2026-08-07 17:29:52 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:29:52 - exchange - INFO - ==================================================
+2026-08-07 17:29:52 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:29:52 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:29:52 - exchange - INFO -   Funding > 0:              224
+2026-08-07 17:29:52 - exchange - INFO -   Funding >= 0.02%:         3
+2026-08-07 17:29:52 - exchange - INFO -   Funding >= 0.05%:         3
+2026-08-07 17:29:52 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:29:52 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 17:29:52 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:29:52 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:29:52 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:29:52 - exchange - INFO - ==================================================
+2026-08-07 17:29:56 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:30:07 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:30:17 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:30:23 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:30:23 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:30:23
+2026-08-07 17:30:23 - exchange - INFO - 🔍 FHEUSDT | funding=0.0381% | next=2026-08-07 16:00:00 UTC | minutes=89
+2026-08-07 17:30:23 - exchange - INFO - 🔍 TACUSDT | funding=0.0659% | next=2026-08-07 16:00:00 UTC | minutes=89
+2026-08-07 17:30:23 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0392% | next=2026-08-07 16:00:00 UTC | minutes=89
+2026-08-07 17:30:23 - exchange - INFO - ==================================================
+2026-08-07 17:30:23 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:30:23 - exchange - INFO - ==================================================
+2026-08-07 17:30:23 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:30:23 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:30:23 - exchange - INFO -   Funding > 0:              223
+2026-08-07 17:30:23 - exchange - INFO -   Funding >= 0.02%:         3
+2026-08-07 17:30:23 - exchange - INFO -   Funding >= 0.05%:         3
+2026-08-07 17:30:23 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:30:23 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 17:30:23 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:30:23 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:30:23 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:30:23 - exchange - INFO - ==================================================
+2026-08-07 17:30:23 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:30:23 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/sendMessage "HTTP/1.1 200 OK"
+2026-08-07 17:30:33 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:30:44 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:30:53 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:30:53 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:30:53
+2026-08-07 17:30:53 - exchange - INFO - 🔍 FHEUSDT | funding=0.0381% | next=2026-08-07 16:00:00 UTC | minutes=89
+2026-08-07 17:30:53 - exchange - INFO - 🔍 TACUSDT | funding=0.0659% | next=2026-08-07 16:00:00 UTC | minutes=89
+2026-08-07 17:30:53 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0392% | next=2026-08-07 16:00:00 UTC | minutes=89
+2026-08-07 17:30:53 - exchange - INFO - ==================================================
+2026-08-07 17:30:53 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:30:53 - exchange - INFO - ==================================================
+2026-08-07 17:30:53 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:30:53 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:30:53 - exchange - INFO -   Funding > 0:              223
+2026-08-07 17:30:53 - exchange - INFO -   Funding >= 0.02%:         3
+2026-08-07 17:30:53 - exchange - INFO -   Funding >= 0.05%:         3
+2026-08-07 17:30:53 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:30:53 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 17:30:53 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:30:53 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:30:53 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:30:53 - exchange - INFO - ==================================================
+2026-08-07 17:30:54 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:31:05 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:31:16 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:31:18 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:31:18 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/sendMessage "HTTP/1.1 200 OK"
+2026-08-07 17:31:23 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:31:23 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:31:23
+2026-08-07 17:31:23 - exchange - INFO - 🔍 FHEUSDT | funding=0.0369% | next=2026-08-07 16:00:00 UTC | minutes=88
+2026-08-07 17:31:23 - exchange - INFO - 🔍 TACUSDT | funding=0.0647% | next=2026-08-07 16:00:00 UTC | minutes=88
+2026-08-07 17:31:23 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0380% | next=2026-08-07 16:00:00 UTC | minutes=88
+2026-08-07 17:31:23 - exchange - INFO - ==================================================
+2026-08-07 17:31:23 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:31:23 - exchange - INFO - ==================================================
+2026-08-07 17:31:23 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:31:23 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:31:23 - exchange - INFO -   Funding > 0:              223
+2026-08-07 17:31:23 - exchange - INFO -   Funding >= 0.02%:         3
+2026-08-07 17:31:23 - exchange - INFO -   Funding >= 0.05%:         3
+2026-08-07 17:31:23 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:31:23 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 17:31:23 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:31:23 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:31:23 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:31:23 - exchange - INFO - ==================================================
+2026-08-07 17:31:29 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:31:39 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:31:50 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:31:54 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:31:54 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:31:54
+2026-08-07 17:31:54 - exchange - INFO - 🔍 FHEUSDT | funding=0.0369% | next=2026-08-07 16:00:00 UTC | minutes=88
+2026-08-07 17:31:54 - exchange - INFO - 🔍 TACUSDT | funding=0.0647% | next=2026-08-07 16:00:00 UTC | minutes=88
+2026-08-07 17:31:54 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0380% | next=2026-08-07 16:00:00 UTC | minutes=88
+2026-08-07 17:31:54 - exchange - INFO - ==================================================
+2026-08-07 17:31:54 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:31:54 - exchange - INFO - ==================================================
+2026-08-07 17:31:54 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:31:54 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:31:54 - exchange - INFO -   Funding > 0:              223
+2026-08-07 17:31:54 - exchange - INFO -   Funding >= 0.02%:         3
+2026-08-07 17:31:54 - exchange - INFO -   Funding >= 0.05%:         3
+2026-08-07 17:31:54 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:31:54 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 17:31:54 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:31:54 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:31:54 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:31:54 - exchange - INFO - ==================================================
+2026-08-07 17:32:00 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:32:11 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:32:22 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:32:24 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:32:24 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:32:24
+2026-08-07 17:32:24 - exchange - INFO - 🔍 FHEUSDT | funding=0.0360% | next=2026-08-07 16:00:00 UTC | minutes=87
+2026-08-07 17:32:24 - exchange - INFO - 🔍 TACUSDT | funding=0.0634% | next=2026-08-07 16:00:00 UTC | minutes=87
+2026-08-07 17:32:24 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0371% | next=2026-08-07 16:00:00 UTC | minutes=87
+2026-08-07 17:32:24 - exchange - INFO - ==================================================
+2026-08-07 17:32:24 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:32:24 - exchange - INFO - ==================================================
+2026-08-07 17:32:24 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:32:24 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:32:24 - exchange - INFO -   Funding > 0:              223
+2026-08-07 17:32:24 - exchange - INFO -   Funding >= 0.02%:         3
+2026-08-07 17:32:24 - exchange - INFO -   Funding >= 0.05%:         3
+2026-08-07 17:32:24 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:32:24 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 17:32:24 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:32:24 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:32:24 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:32:24 - exchange - INFO - ==================================================
+2026-08-07 17:32:32 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:32:43 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:32:53 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:32:55 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:32:55 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:32:55
+2026-08-07 17:32:55 - exchange - INFO - 🔍 FHEUSDT | funding=0.0360% | next=2026-08-07 16:00:00 UTC | minutes=87
+2026-08-07 17:32:55 - exchange - INFO - 🔍 TACUSDT | funding=0.0634% | next=2026-08-07 16:00:00 UTC | minutes=87
+2026-08-07 17:32:55 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0371% | next=2026-08-07 16:00:00 UTC | minutes=87
+2026-08-07 17:32:55 - exchange - INFO - ==================================================
+2026-08-07 17:32:55 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:32:55 - exchange - INFO - ==================================================
+2026-08-07 17:32:55 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:32:55 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:32:55 - exchange - INFO -   Funding > 0:              223
+2026-08-07 17:32:55 - exchange - INFO -   Funding >= 0.02%:         3
+2026-08-07 17:32:55 - exchange - INFO -   Funding >= 0.05%:         3
+2026-08-07 17:32:55 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:32:55 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 17:32:55 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:32:55 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:32:55 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:32:55 - exchange - INFO - ==================================================
+2026-08-07 17:33:04 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:33:14 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:33:25 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:33:25 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:33:25
+2026-08-07 17:33:25 - exchange - INFO - 🔍 FHEUSDT | funding=0.0349% | next=2026-08-07 16:00:00 UTC | minutes=86
+2026-08-07 17:33:25 - exchange - INFO - 🔍 PIEVERSEUSDT | funding=0.0201% | next=2026-08-07 16:00:00 UTC | minutes=86
+2026-08-07 17:33:25 - exchange - INFO - 🔍 TACUSDT | funding=0.0619% | next=2026-08-07 16:00:00 UTC | minutes=86
+2026-08-07 17:33:25 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0360% | next=2026-08-07 16:00:00 UTC | minutes=86
+2026-08-07 17:33:25 - exchange - INFO - ==================================================
+2026-08-07 17:33:25 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:33:25 - exchange - INFO - ==================================================
+2026-08-07 17:33:25 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:33:25 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:33:25 - exchange - INFO -   Funding > 0:              222
+2026-08-07 17:33:25 - exchange - INFO -   Funding >= 0.02%:         4
+2026-08-07 17:33:25 - exchange - INFO -   Funding >= 0.05%:         4
+2026-08-07 17:33:25 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:33:25 - exchange - INFO -   Объем >= $1,000,000: 1
+2026-08-07 17:33:25 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:33:25 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:33:25 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:33:25 - exchange - INFO - ==================================================
+2026-08-07 17:33:25 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:33:36 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:33:46 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:33:55 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:33:55 - exchange - INFO - ✅ Загружено 557 спотовых символов
+2026-08-07 17:33:55 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:33:55
+2026-08-07 17:33:55 - exchange - INFO - 🔍 FHEUSDT | funding=0.0349% | next=2026-08-07 16:00:00 UTC | minutes=86
+2026-08-07 17:33:55 - exchange - INFO - 🔍 PIEVERSEUSDT | funding=0.0201% | next=2026-08-07 16:00:00 UTC | minutes=86
+2026-08-07 17:33:55 - exchange - INFO - 🔍 TACUSDT | funding=0.0619% | next=2026-08-07 16:00:00 UTC | minutes=86
+2026-08-07 17:33:55 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0360% | next=2026-08-07 16:00:00 UTC | minutes=86
+2026-08-07 17:33:55 - exchange - INFO - ==================================================
+2026-08-07 17:33:55 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:33:55 - exchange - INFO - ==================================================
+2026-08-07 17:33:55 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:33:55 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:33:55 - exchange - INFO -   Funding > 0:              222
+2026-08-07 17:33:55 - exchange - INFO -   Funding >= 0.02%:         4
+2026-08-07 17:33:55 - exchange - INFO -   Funding >= 0.05%:         4
+2026-08-07 17:33:55 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:33:55 - exchange - INFO -   Объем >= $1,000,000: 1
+2026-08-07 17:33:55 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:33:55 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:33:55 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:33:55 - exchange - INFO - ==================================================
+2026-08-07 17:33:57 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:34:07 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:34:18 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:34:18 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-08-07 17:34:18 - telegram.ext.Application - WARNING - Fetching updates got a asyncio.CancelledError. Ignoring as this task may onlybe closed via `Application.stop`.
+2026-08-07 17:34:18 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2026-08-07 17:34:18 - telegram.ext.Application - INFO - Application.stop() complete
+2026-08-07 17:34:18 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:34:18 - telegram_handlers - INFO - 👋 Бот завершил работу
+2026-08-07 17:34:18 - root - INFO - 👋 Бот завершил работу
+2026-08-07 17:51:12 - root - INFO - 
+╔═══════════════════════════════════════════════════════╗
+║                                                       ║
+║   🚀 Funding Arbitrage Bot v1.0.0                    ║
+║                                                       ║
+║   📊 Анализ фандинга на Bybit                       ║
+║   🤖 Telegram бот для арбитража                     ║
+║                                                       ║
+╚═══════════════════════════════════════════════════════╝
+    
+2026-08-07 17:51:12 - root - INFO - 📋 Текущие настройки:
+2026-08-07 17:51:12 - root - INFO -   • Минимальный фандинг: 0.02%
+2026-08-07 17:51:12 - root - INFO -   • Макс время до выплаты: 10 мин
+2026-08-07 17:51:12 - root - INFO -   • Минимальный объем: $1,000,000
+2026-08-07 17:51:12 - root - INFO -   • Интервал сканирования: 30 сек
+2026-08-07 17:51:12 - root - INFO - 
+2026-08-07 17:51:12 - root - INFO -   • Спот комиссия: 0.1% (покупка) + 0.1% (продажа)
+2026-08-07 17:51:12 - root - INFO -   • Фьючерс комиссия: 0.02% (открытие) + 0.055% (закрытие)
+2026-08-07 17:51:12 - root - INFO - ==================================================
+2026-08-07 17:51:12 - root - INFO - ✅ Проверка окружения пройдена успешно
+2026-08-07 17:51:12 - root - INFO - 📱 Инициализация Telegram бота...
+2026-08-07 17:51:13 - root - INFO - ✅ Бот успешно инициализирован
+2026-08-07 17:51:13 - root - INFO - 
+2026-08-07 17:51:13 - root - INFO - 🚀 Запуск бота...
+2026-08-07 17:51:13 - root - INFO - ⏳ Ожидайте уведомлений о найденных кандидатах
+2026-08-07 17:51:13 - root - INFO - ==================================================
+2026-08-07 17:51:13 - root - INFO - 
+2026-08-07 17:51:13 - telegram_handlers - INFO - 🚀 Запуск Telegram бота...
+2026-08-07 17:51:13 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/deleteWebhook "HTTP/1.1 200 OK"
+2026-08-07 17:51:13 - telegram_handlers - INFO - ✅ Webhook очищен
+2026-08-07 17:51:13 - telegram_handlers - INFO - 🔄 Запуск фонового сканера...
+2026-08-07 17:51:13 - scanner - INFO - 🔄 Scanner started with interval 30 seconds
+2026-08-07 17:51:13 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:51:14 - exchange - INFO - ✅ Загружено 557 спотовых символов
+2026-08-07 17:51:14 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:51:14
+2026-08-07 17:51:14 - exchange - INFO - 🔍 FHEUSDT | funding=0.0294% | next=2026-08-07 16:00:00 UTC | minutes=68
+2026-08-07 17:51:14 - exchange - INFO - 🔍 PIEVERSEUSDT | funding=0.0214% | next=2026-08-07 16:00:00 UTC | minutes=68
+2026-08-07 17:51:14 - exchange - INFO - 🔍 TACUSDT | funding=0.0552% | next=2026-08-07 16:00:00 UTC | minutes=68
+2026-08-07 17:51:14 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0303% | next=2026-08-07 16:00:00 UTC | minutes=68
+2026-08-07 17:51:14 - exchange - INFO - 🔍 WAVESUSDT | funding=0.0264% | next=2026-08-07 16:00:00 UTC | minutes=68
+2026-08-07 17:51:14 - exchange - INFO - ==================================================
+2026-08-07 17:51:14 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:51:14 - exchange - INFO - ==================================================
+2026-08-07 17:51:14 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:51:14 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:51:14 - exchange - INFO -   Funding > 0:              213
+2026-08-07 17:51:14 - exchange - INFO -   Funding >= 0.02%:         5
+2026-08-07 17:51:14 - exchange - INFO -   Funding >= 0.05%:         5
+2026-08-07 17:51:14 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:51:14 - exchange - INFO -   Объем >= $1,000,000: 1
+2026-08-07 17:51:14 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:51:14 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:51:14 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:51:14 - exchange - INFO - ==================================================
+2026-08-07 17:51:14 - telegram_handlers - INFO - 📊 Статус обновлен: 0 кандидатов
+2026-08-07 17:51:14 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getMe "HTTP/1.1 200 OK"
+2026-08-07 17:51:14 - apscheduler.scheduler - INFO - Scheduler started
+2026-08-07 17:51:14 - telegram.ext.Application - INFO - Application started
+2026-08-07 17:51:14 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/deleteWebhook "HTTP/1.1 200 OK"
+2026-08-07 17:51:14 - telegram_handlers - INFO - ✅ Бот успешно запущен и готов к работе!
+2026-08-07 17:51:14 - telegram_handlers - INFO - 📱 Нажмите /start в Telegram для начала работы
+2026-08-07 17:51:14 - telegram_handlers - INFO - ==================================================
+2026-08-07 17:51:20 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:51:20 - telegram_handlers - INFO - 👤 Новый пользователь: 462035571 (chat_id: 462035571)
+2026-08-07 17:51:20 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/sendMessage "HTTP/1.1 200 OK"
+2026-08-07 17:51:30 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:51:41 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:51:44 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:51:44 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:51:44
+2026-08-07 17:51:44 - exchange - INFO - 🔍 FHEUSDT | funding=0.0294% | next=2026-08-07 16:00:00 UTC | minutes=68
+2026-08-07 17:51:44 - exchange - INFO - 🔍 PIEVERSEUSDT | funding=0.0214% | next=2026-08-07 16:00:00 UTC | minutes=68
+2026-08-07 17:51:44 - exchange - INFO - 🔍 TACUSDT | funding=0.0552% | next=2026-08-07 16:00:00 UTC | minutes=68
+2026-08-07 17:51:44 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0303% | next=2026-08-07 16:00:00 UTC | minutes=68
+2026-08-07 17:51:44 - exchange - INFO - 🔍 WAVESUSDT | funding=0.0264% | next=2026-08-07 16:00:00 UTC | minutes=68
+2026-08-07 17:51:44 - exchange - INFO - ==================================================
+2026-08-07 17:51:44 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:51:44 - exchange - INFO - ==================================================
+2026-08-07 17:51:44 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:51:44 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:51:44 - exchange - INFO -   Funding > 0:              213
+2026-08-07 17:51:44 - exchange - INFO -   Funding >= 0.02%:         5
+2026-08-07 17:51:44 - exchange - INFO -   Funding >= 0.05%:         5
+2026-08-07 17:51:44 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:51:44 - exchange - INFO -   Объем >= $1,000,000: 1
+2026-08-07 17:51:44 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:51:44 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:51:44 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:51:44 - exchange - INFO - ==================================================
+2026-08-07 17:51:44 - telegram_handlers - INFO - 📊 Статус обновлен: 0 кандидатов
+2026-08-07 17:51:51 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:52:02 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:52:13 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:52:15 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:52:15 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:52:15
+2026-08-07 17:52:15 - exchange - INFO - 🔍 FHEUSDT | funding=0.0285% | next=2026-08-07 16:00:00 UTC | minutes=67
+2026-08-07 17:52:15 - exchange - INFO - 🔍 PIEVERSEUSDT | funding=0.0206% | next=2026-08-07 16:00:00 UTC | minutes=67
+2026-08-07 17:52:15 - exchange - INFO - 🔍 TACUSDT | funding=0.0549% | next=2026-08-07 16:00:00 UTC | minutes=67
+2026-08-07 17:52:15 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0293% | next=2026-08-07 16:00:00 UTC | minutes=67
+2026-08-07 17:52:15 - exchange - INFO - 🔍 WAVESUSDT | funding=0.0261% | next=2026-08-07 16:00:00 UTC | minutes=67
+2026-08-07 17:52:15 - exchange - INFO - ==================================================
+2026-08-07 17:52:15 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:52:15 - exchange - INFO - ==================================================
+2026-08-07 17:52:15 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:52:15 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:52:15 - exchange - INFO -   Funding > 0:              208
+2026-08-07 17:52:15 - exchange - INFO -   Funding >= 0.02%:         5
+2026-08-07 17:52:15 - exchange - INFO -   Funding >= 0.05%:         5
+2026-08-07 17:52:15 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:52:15 - exchange - INFO -   Объем >= $1,000,000: 1
+2026-08-07 17:52:15 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:52:15 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:52:15 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:52:15 - exchange - INFO - ==================================================
+2026-08-07 17:52:15 - telegram_handlers - INFO - 📊 Статус обновлен: 0 кандидатов
+2026-08-07 17:52:23 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:52:34 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:52:44 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:52:46 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:52:46 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:52:46
+2026-08-07 17:52:46 - exchange - INFO - 🔍 FHEUSDT | funding=0.0285% | next=2026-08-07 16:00:00 UTC | minutes=67
+2026-08-07 17:52:46 - exchange - INFO - 🔍 PIEVERSEUSDT | funding=0.0206% | next=2026-08-07 16:00:00 UTC | minutes=67
+2026-08-07 17:52:46 - exchange - INFO - 🔍 TACUSDT | funding=0.0549% | next=2026-08-07 16:00:00 UTC | minutes=67
+2026-08-07 17:52:46 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0293% | next=2026-08-07 16:00:00 UTC | minutes=67
+2026-08-07 17:52:46 - exchange - INFO - 🔍 WAVESUSDT | funding=0.0261% | next=2026-08-07 16:00:00 UTC | minutes=67
+2026-08-07 17:52:46 - exchange - INFO - ==================================================
+2026-08-07 17:52:46 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:52:46 - exchange - INFO - ==================================================
+2026-08-07 17:52:46 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:52:46 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:52:46 - exchange - INFO -   Funding > 0:              208
+2026-08-07 17:52:46 - exchange - INFO -   Funding >= 0.02%:         5
+2026-08-07 17:52:46 - exchange - INFO -   Funding >= 0.05%:         5
+2026-08-07 17:52:46 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:52:46 - exchange - INFO -   Объем >= $1,000,000: 1
+2026-08-07 17:52:46 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:52:46 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:52:46 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:52:46 - exchange - INFO - ==================================================
+2026-08-07 17:52:46 - telegram_handlers - INFO - 📊 Статус обновлен: 0 кандидатов
+2026-08-07 17:52:52 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:52:52 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/sendMessage "HTTP/1.1 400 Bad Request"
+2026-08-07 17:52:52 - telegram_handlers - ERROR - Ошибка: Can't parse entities: unsupported start tag "=" at byte offset 389
+2026-08-07 17:52:52 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/sendMessage "HTTP/1.1 200 OK"
+2026-08-07 17:53:03 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:53:13 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:53:16 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:53:16 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:53:16
+2026-08-07 17:53:16 - exchange - INFO - 🔍 FHEUSDT | funding=0.0277% | next=2026-08-07 16:00:00 UTC | minutes=66
+2026-08-07 17:53:16 - exchange - INFO - 🔍 TACUSDT | funding=0.0546% | next=2026-08-07 16:00:00 UTC | minutes=66
+2026-08-07 17:53:16 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0287% | next=2026-08-07 16:00:00 UTC | minutes=66
+2026-08-07 17:53:16 - exchange - INFO - 🔍 WAVESUSDT | funding=0.0257% | next=2026-08-07 16:00:00 UTC | minutes=66
+2026-08-07 17:53:16 - exchange - INFO - ==================================================
+2026-08-07 17:53:16 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:53:16 - exchange - INFO - ==================================================
+2026-08-07 17:53:16 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:53:16 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:53:16 - exchange - INFO -   Funding > 0:              209
+2026-08-07 17:53:16 - exchange - INFO -   Funding >= 0.02%:         4
+2026-08-07 17:53:16 - exchange - INFO -   Funding >= 0.05%:         4
+2026-08-07 17:53:16 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:53:16 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 17:53:16 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:53:16 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:53:16 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:53:16 - exchange - INFO - ==================================================
+2026-08-07 17:53:16 - telegram_handlers - INFO - 📊 Статус обновлен: 0 кандидатов
+2026-08-07 17:53:17 - telegram.ext.Application - WARNING - Fetching updates got a asyncio.CancelledError. Ignoring as this task may onlybe closed via `Application.stop`.
+2026-08-07 17:53:17 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-08-07 17:53:17 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2026-08-07 17:53:17 - telegram.ext.Application - INFO - Application.stop() complete
+2026-08-07 17:53:18 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:53:18 - telegram_handlers - INFO - 👋 Бот завершил работу
+2026-08-07 17:53:18 - root - INFO - 👋 Бот завершил работу
+2026-08-07 17:56:45 - root - INFO - 
+╔═══════════════════════════════════════════════════════╗
+║                                                       ║
+║   🚀 Funding Arbitrage Bot v1.0.0                    ║
+║                                                       ║
+║   📊 Анализ фандинга на Bybit                       ║
+║   🤖 Telegram бот для арбитража                     ║
+║                                                       ║
+╚═══════════════════════════════════════════════════════╝
+    
+2026-08-07 17:56:45 - root - INFO - 📋 Текущие настройки:
+2026-08-07 17:56:45 - root - INFO -   • Минимальный фандинг: 0.02%
+2026-08-07 17:56:45 - root - INFO -   • Макс время до выплаты: 10 мин
+2026-08-07 17:56:45 - root - INFO -   • Минимальный объем: $1,000,000
+2026-08-07 17:56:45 - root - INFO -   • Интервал сканирования: 30 сек
+2026-08-07 17:56:45 - root - INFO - 
+2026-08-07 17:56:45 - root - INFO -   • Спот комиссия: 0.1% (покупка) + 0.1% (продажа)
+2026-08-07 17:56:45 - root - INFO -   • Фьючерс комиссия: 0.02% (открытие) + 0.055% (закрытие)
+2026-08-07 17:56:45 - root - INFO - ==================================================
+2026-08-07 17:56:45 - root - INFO - ✅ Проверка окружения пройдена успешно
+2026-08-07 17:56:45 - root - INFO - 📱 Инициализация Telegram бота...
+2026-08-07 17:56:45 - root - INFO - ✅ Бот успешно инициализирован
+2026-08-07 17:56:45 - root - INFO - 
+2026-08-07 17:56:45 - root - INFO - 🚀 Запуск бота...
+2026-08-07 17:56:45 - root - INFO - ⏳ Ожидайте уведомлений о найденных кандидатах
+2026-08-07 17:56:45 - root - INFO - ==================================================
+2026-08-07 17:56:45 - root - INFO - 
+2026-08-07 17:56:45 - telegram_handlers - INFO - 🚀 Запуск Telegram бота...
+2026-08-07 17:56:45 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/deleteWebhook "HTTP/1.1 200 OK"
+2026-08-07 17:56:45 - telegram_handlers - INFO - ✅ Webhook очищен
+2026-08-07 17:56:45 - telegram_handlers - INFO - 🔄 Запуск фонового сканера...
+2026-08-07 17:56:45 - scanner - INFO - 🔄 Scanner started with interval 30 seconds
+2026-08-07 17:56:46 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:56:47 - exchange - INFO - ✅ Загружено 557 спотовых символов
+2026-08-07 17:56:47 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:56:47
+2026-08-07 17:56:47 - exchange - INFO - 🔍 FHEUSDT | funding=0.0281% | next=2026-08-07 16:00:00 UTC | minutes=63
+2026-08-07 17:56:47 - exchange - INFO - 🔍 PIEVERSEUSDT | funding=0.0205% | next=2026-08-07 16:00:00 UTC | minutes=63
+2026-08-07 17:56:47 - exchange - INFO - 🔍 TACUSDT | funding=0.0535% | next=2026-08-07 16:00:00 UTC | minutes=63
+2026-08-07 17:56:47 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0301% | next=2026-08-07 16:00:00 UTC | minutes=63
+2026-08-07 17:56:47 - exchange - INFO - 🔍 WAVESUSDT | funding=0.0266% | next=2026-08-07 16:00:00 UTC | minutes=63
+2026-08-07 17:56:47 - exchange - INFO - ==================================================
+2026-08-07 17:56:47 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:56:47 - exchange - INFO - ==================================================
+2026-08-07 17:56:47 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:56:47 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:56:47 - exchange - INFO -   Funding > 0:              210
+2026-08-07 17:56:47 - exchange - INFO -   Funding >= 0.02%:         5
+2026-08-07 17:56:47 - exchange - INFO -   Funding >= 0.05%:         5
+2026-08-07 17:56:47 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:56:47 - exchange - INFO -   Объем >= $1,000,000: 1
+2026-08-07 17:56:47 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:56:47 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:56:47 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:56:47 - exchange - INFO - ==================================================
+2026-08-07 17:56:47 - telegram_handlers - INFO - 📊 Статус обновлен: 0 кандидатов
+2026-08-07 17:56:47 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getMe "HTTP/1.1 200 OK"
+2026-08-07 17:56:47 - apscheduler.scheduler - INFO - Scheduler started
+2026-08-07 17:56:47 - telegram.ext.Application - INFO - Application started
+2026-08-07 17:56:47 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/deleteWebhook "HTTP/1.1 200 OK"
+2026-08-07 17:56:47 - telegram_handlers - INFO - ✅ Бот успешно запущен и готов к работе!
+2026-08-07 17:56:47 - telegram_handlers - INFO - 📱 Нажмите /start в Telegram для начала работы
+2026-08-07 17:56:47 - telegram_handlers - INFO - ==================================================
+2026-08-07 17:56:53 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:56:53 - telegram_handlers - INFO - 👤 Новый пользователь: 462035571 (chat_id: 462035571)
+2026-08-07 17:56:53 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/sendMessage "HTTP/1.1 200 OK"
+2026-08-07 17:57:04 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:57:14 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:57:18 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:57:18 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:57:18
+2026-08-07 17:57:18 - exchange - INFO - 🔍 FHEUSDT | funding=0.0277% | next=2026-08-07 16:00:00 UTC | minutes=62
+2026-08-07 17:57:18 - exchange - INFO - 🔍 PIEVERSEUSDT | funding=0.0203% | next=2026-08-07 16:00:00 UTC | minutes=62
+2026-08-07 17:57:18 - exchange - INFO - 🔍 TACUSDT | funding=0.0532% | next=2026-08-07 16:00:00 UTC | minutes=62
+2026-08-07 17:57:18 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0306% | next=2026-08-07 16:00:00 UTC | minutes=62
+2026-08-07 17:57:18 - exchange - INFO - 🔍 WAVESUSDT | funding=0.0268% | next=2026-08-07 16:00:00 UTC | minutes=62
+2026-08-07 17:57:18 - exchange - INFO - ==================================================
+2026-08-07 17:57:18 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:57:18 - exchange - INFO - ==================================================
+2026-08-07 17:57:18 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:57:18 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:57:18 - exchange - INFO -   Funding > 0:              210
+2026-08-07 17:57:18 - exchange - INFO -   Funding >= 0.02%:         5
+2026-08-07 17:57:18 - exchange - INFO -   Funding >= 0.05%:         5
+2026-08-07 17:57:18 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:57:18 - exchange - INFO -   Объем >= $1,000,000: 1
+2026-08-07 17:57:18 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:57:18 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:57:18 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:57:18 - exchange - INFO - ==================================================
+2026-08-07 17:57:18 - telegram_handlers - INFO - 📊 Статус обновлен: 0 кандидатов
+2026-08-07 17:57:25 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:57:35 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:57:46 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:57:46 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/sendMessage "HTTP/1.1 400 Bad Request"
+2026-08-07 17:57:46 - telegram_handlers - ERROR - Ошибка: Can't parse entities: unsupported start tag "=" at byte offset 427
+2026-08-07 17:57:46 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/sendMessage "HTTP/1.1 200 OK"
+2026-08-07 17:57:48 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:57:48 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:57:48
+2026-08-07 17:57:48 - exchange - INFO - 🔍 FHEUSDT | funding=0.0277% | next=2026-08-07 16:00:00 UTC | minutes=62
+2026-08-07 17:57:48 - exchange - INFO - 🔍 PIEVERSEUSDT | funding=0.0203% | next=2026-08-07 16:00:00 UTC | minutes=62
+2026-08-07 17:57:48 - exchange - INFO - 🔍 TACUSDT | funding=0.0532% | next=2026-08-07 16:00:00 UTC | minutes=62
+2026-08-07 17:57:48 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0306% | next=2026-08-07 16:00:00 UTC | minutes=62
+2026-08-07 17:57:48 - exchange - INFO - 🔍 WAVESUSDT | funding=0.0268% | next=2026-08-07 16:00:00 UTC | minutes=62
+2026-08-07 17:57:48 - exchange - INFO - ==================================================
+2026-08-07 17:57:48 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:57:48 - exchange - INFO - ==================================================
+2026-08-07 17:57:48 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:57:48 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:57:48 - exchange - INFO -   Funding > 0:              210
+2026-08-07 17:57:48 - exchange - INFO -   Funding >= 0.02%:         5
+2026-08-07 17:57:48 - exchange - INFO -   Funding >= 0.05%:         5
+2026-08-07 17:57:48 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:57:48 - exchange - INFO -   Объем >= $1,000,000: 1
+2026-08-07 17:57:48 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:57:48 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:57:48 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:57:48 - exchange - INFO - ==================================================
+2026-08-07 17:57:48 - telegram_handlers - INFO - 📊 Статус обновлен: 0 кандидатов
+2026-08-07 17:57:56 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:58:07 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:58:17 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:58:18 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:58:18 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:58:18
+2026-08-07 17:58:18 - exchange - INFO - 🔍 FHEUSDT | funding=0.0278% | next=2026-08-07 16:00:00 UTC | minutes=61
+2026-08-07 17:58:18 - exchange - INFO - 🔍 TACUSDT | funding=0.0539% | next=2026-08-07 16:00:00 UTC | minutes=61
+2026-08-07 17:58:18 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0312% | next=2026-08-07 16:00:00 UTC | minutes=61
+2026-08-07 17:58:18 - exchange - INFO - 🔍 WAVESUSDT | funding=0.0269% | next=2026-08-07 16:00:00 UTC | minutes=61
+2026-08-07 17:58:18 - exchange - INFO - ==================================================
+2026-08-07 17:58:18 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:58:18 - exchange - INFO - ==================================================
+2026-08-07 17:58:18 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:58:18 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:58:18 - exchange - INFO -   Funding > 0:              210
+2026-08-07 17:58:18 - exchange - INFO -   Funding >= 0.02%:         4
+2026-08-07 17:58:18 - exchange - INFO -   Funding >= 0.05%:         4
+2026-08-07 17:58:18 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:58:18 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 17:58:18 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:58:18 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:58:18 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:58:18 - exchange - INFO - ==================================================
+2026-08-07 17:58:18 - telegram_handlers - INFO - 📊 Статус обновлен: 0 кандидатов
+2026-08-07 17:58:22 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:58:22 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/sendMessage "HTTP/1.1 400 Bad Request"
+2026-08-07 17:58:22 - telegram_handlers - ERROR - Ошибка: Can't parse entities: unsupported start tag "=" at byte offset 427
+2026-08-07 17:58:22 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/sendMessage "HTTP/1.1 200 OK"
+2026-08-07 17:58:33 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:58:43 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:58:50 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:58:50 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:58:50
+2026-08-07 17:58:50 - exchange - INFO - 🔍 FHEUSDT | funding=0.0278% | next=2026-08-07 16:00:00 UTC | minutes=61
+2026-08-07 17:58:50 - exchange - INFO - 🔍 TACUSDT | funding=0.0539% | next=2026-08-07 16:00:00 UTC | minutes=61
+2026-08-07 17:58:50 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0312% | next=2026-08-07 16:00:00 UTC | minutes=61
+2026-08-07 17:58:50 - exchange - INFO - 🔍 WAVESUSDT | funding=0.0269% | next=2026-08-07 16:00:00 UTC | minutes=61
+2026-08-07 17:58:50 - exchange - INFO - ==================================================
+2026-08-07 17:58:50 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:58:50 - exchange - INFO - ==================================================
+2026-08-07 17:58:50 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:58:50 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:58:50 - exchange - INFO -   Funding > 0:              210
+2026-08-07 17:58:50 - exchange - INFO -   Funding >= 0.02%:         4
+2026-08-07 17:58:50 - exchange - INFO -   Funding >= 0.05%:         4
+2026-08-07 17:58:50 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:58:50 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 17:58:50 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:58:50 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:58:50 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:58:50 - exchange - INFO - ==================================================
+2026-08-07 17:58:50 - telegram_handlers - INFO - 📊 Статус обновлен: 0 кандидатов
+2026-08-07 17:58:54 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:59:04 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:59:15 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:59:20 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:59:20 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:59:20
+2026-08-07 17:59:20 - exchange - INFO - 🔍 FHEUSDT | funding=0.0278% | next=2026-08-07 16:00:00 UTC | minutes=60
+2026-08-07 17:59:20 - exchange - INFO - 🔍 TACUSDT | funding=0.0541% | next=2026-08-07 16:00:00 UTC | minutes=60
+2026-08-07 17:59:20 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0319% | next=2026-08-07 16:00:00 UTC | minutes=60
+2026-08-07 17:59:20 - exchange - INFO - 🔍 WAVESUSDT | funding=0.0269% | next=2026-08-07 16:00:00 UTC | minutes=60
+2026-08-07 17:59:20 - exchange - INFO - ==================================================
+2026-08-07 17:59:20 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:59:20 - exchange - INFO - ==================================================
+2026-08-07 17:59:20 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:59:20 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:59:20 - exchange - INFO -   Funding > 0:              211
+2026-08-07 17:59:20 - exchange - INFO -   Funding >= 0.02%:         4
+2026-08-07 17:59:20 - exchange - INFO -   Funding >= 0.05%:         4
+2026-08-07 17:59:20 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:59:20 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 17:59:20 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:59:20 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:59:20 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:59:20 - exchange - INFO - ==================================================
+2026-08-07 17:59:20 - telegram_handlers - INFO - 📊 Статус обновлен: 0 кандидатов
+2026-08-07 17:59:25 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:59:36 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:59:47 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 17:59:50 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 17:59:50 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 14:59:50
+2026-08-07 17:59:50 - exchange - INFO - 🔍 FHEUSDT | funding=0.0278% | next=2026-08-07 16:00:00 UTC | minutes=60
+2026-08-07 17:59:50 - exchange - INFO - 🔍 TACUSDT | funding=0.0541% | next=2026-08-07 16:00:00 UTC | minutes=60
+2026-08-07 17:59:50 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0319% | next=2026-08-07 16:00:00 UTC | minutes=60
+2026-08-07 17:59:50 - exchange - INFO - 🔍 WAVESUSDT | funding=0.0269% | next=2026-08-07 16:00:00 UTC | minutes=60
+2026-08-07 17:59:50 - exchange - INFO - ==================================================
+2026-08-07 17:59:50 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 17:59:50 - exchange - INFO - ==================================================
+2026-08-07 17:59:50 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 17:59:50 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 17:59:50 - exchange - INFO -   Funding > 0:              211
+2026-08-07 17:59:50 - exchange - INFO -   Funding >= 0.02%:         4
+2026-08-07 17:59:50 - exchange - INFO -   Funding >= 0.05%:         4
+2026-08-07 17:59:50 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 17:59:50 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 17:59:50 - exchange - INFO - --------------------------------------------------
+2026-08-07 17:59:50 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 17:59:50 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 17:59:50 - exchange - INFO - ==================================================
+2026-08-07 17:59:50 - telegram_handlers - INFO - 📊 Статус обновлен: 0 кандидатов
+2026-08-07 17:59:57 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 18:00:08 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 18:00:18 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 18:00:20 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 18:00:20 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 15:00:20
+2026-08-07 18:00:20 - exchange - INFO - 🔍 FHEUSDT | funding=0.0280% | next=2026-08-07 16:00:00 UTC | minutes=59
+2026-08-07 18:00:20 - exchange - INFO - 🔍 TACUSDT | funding=0.0545% | next=2026-08-07 16:00:00 UTC | minutes=59
+2026-08-07 18:00:20 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0325% | next=2026-08-07 16:00:00 UTC | minutes=59
+2026-08-07 18:00:20 - exchange - INFO - 🔍 WAVESUSDT | funding=0.0267% | next=2026-08-07 16:00:00 UTC | minutes=59
+2026-08-07 18:00:20 - exchange - INFO - ==================================================
+2026-08-07 18:00:20 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 18:00:20 - exchange - INFO - ==================================================
+2026-08-07 18:00:20 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 18:00:20 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 18:00:20 - exchange - INFO -   Funding > 0:              212
+2026-08-07 18:00:20 - exchange - INFO -   Funding >= 0.02%:         4
+2026-08-07 18:00:20 - exchange - INFO -   Funding >= 0.05%:         4
+2026-08-07 18:00:20 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 18:00:20 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 18:00:20 - exchange - INFO - --------------------------------------------------
+2026-08-07 18:00:20 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 18:00:20 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 18:00:20 - exchange - INFO - ==================================================
+2026-08-07 18:00:20 - telegram_handlers - INFO - 📊 Статус обновлен: 0 кандидатов
+2026-08-07 18:00:29 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 18:00:40 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 18:00:44 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-08-07 18:00:44 - telegram.ext.Application - WARNING - Fetching updates got a asyncio.CancelledError. Ignoring as this task may onlybe closed via `Application.stop`.
+2026-08-07 18:00:44 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2026-08-07 18:00:44 - telegram.ext.Application - INFO - Application.stop() complete
+2026-08-07 18:00:45 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 18:00:45 - telegram_handlers - INFO - 👋 Бот завершил работу
+2026-08-07 18:00:45 - root - INFO - 👋 Бот завершил работу
+2026-08-07 18:01:39 - root - INFO - 
+╔═══════════════════════════════════════════════════════╗
+║                                                       ║
+║   🚀 Funding Arbitrage Bot v1.0.0                    ║
+║                                                       ║
+║   📊 Анализ фандинга на Bybit                       ║
+║   🤖 Telegram бот для арбитража                     ║
+║                                                       ║
+╚═══════════════════════════════════════════════════════╝
+    
+2026-08-07 18:01:39 - root - INFO - 📋 Текущие настройки:
+2026-08-07 18:01:39 - root - INFO -   • Минимальный фандинг: 0.02%
+2026-08-07 18:01:39 - root - INFO -   • Макс время до выплаты: 10 мин
+2026-08-07 18:01:39 - root - INFO -   • Минимальный объем: $1,000,000
+2026-08-07 18:01:39 - root - INFO -   • Интервал сканирования: 30 сек
+2026-08-07 18:01:39 - root - INFO - 
+2026-08-07 18:01:39 - root - INFO -   • Спот комиссия: 0.1% (покупка) + 0.1% (продажа)
+2026-08-07 18:01:39 - root - INFO -   • Фьючерс комиссия: 0.02% (открытие) + 0.055% (закрытие)
+2026-08-07 18:01:39 - root - INFO - ==================================================
+2026-08-07 18:01:39 - root - INFO - ✅ Проверка окружения пройдена успешно
+2026-08-07 18:01:39 - root - INFO - 📱 Инициализация Telegram бота...
+2026-08-07 18:01:39 - root - INFO - ✅ Бот успешно инициализирован
+2026-08-07 18:01:39 - root - INFO - 
+2026-08-07 18:01:39 - root - INFO - 🚀 Запуск бота...
+2026-08-07 18:01:39 - root - INFO - ⏳ Ожидайте уведомлений о найденных кандидатах
+2026-08-07 18:01:39 - root - INFO - ==================================================
+2026-08-07 18:01:39 - root - INFO - 
+2026-08-07 18:01:39 - telegram_handlers - INFO - 🚀 Запуск Telegram бота...
+2026-08-07 18:01:39 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/deleteWebhook "HTTP/1.1 200 OK"
+2026-08-07 18:01:39 - telegram_handlers - INFO - ✅ Webhook очищен
+2026-08-07 18:01:39 - telegram_handlers - INFO - 🔄 Запуск фонового сканера...
+2026-08-07 18:01:39 - scanner - INFO - 🔄 Scanner started with interval 30 seconds
+2026-08-07 18:01:40 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 18:01:40 - exchange - INFO - ✅ Загружено 557 спотовых символов
+2026-08-07 18:01:40 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 15:01:40
+2026-08-07 18:01:40 - exchange - INFO - 🔍 FHEUSDT | funding=0.0280% | next=2026-08-07 16:00:00 UTC | minutes=58
+2026-08-07 18:01:40 - exchange - INFO - 🔍 TACUSDT | funding=0.0548% | next=2026-08-07 16:00:00 UTC | minutes=58
+2026-08-07 18:01:40 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0329% | next=2026-08-07 16:00:00 UTC | minutes=58
+2026-08-07 18:01:40 - exchange - INFO - 🔍 WAVESUSDT | funding=0.0263% | next=2026-08-07 16:00:00 UTC | minutes=58
+2026-08-07 18:01:40 - exchange - INFO - ==================================================
+2026-08-07 18:01:40 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 18:01:40 - exchange - INFO - ==================================================
+2026-08-07 18:01:40 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 18:01:40 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 18:01:40 - exchange - INFO -   Funding > 0:              211
+2026-08-07 18:01:40 - exchange - INFO -   Funding >= 0.02%:         4
+2026-08-07 18:01:40 - exchange - INFO -   Funding >= 0.05%:         4
+2026-08-07 18:01:40 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 18:01:40 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 18:01:40 - exchange - INFO - --------------------------------------------------
+2026-08-07 18:01:40 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 18:01:40 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 18:01:40 - exchange - INFO - ==================================================
+2026-08-07 18:01:40 - telegram_handlers - INFO - 📊 Статус обновлен: 0 кандидатов
+2026-08-07 18:01:40 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getMe "HTTP/1.1 200 OK"
+2026-08-07 18:01:40 - apscheduler.scheduler - INFO - Scheduler started
+2026-08-07 18:01:40 - telegram.ext.Application - INFO - Application started
+2026-08-07 18:01:40 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/deleteWebhook "HTTP/1.1 200 OK"
+2026-08-07 18:01:40 - telegram_handlers - INFO - ✅ Бот успешно запущен и готов к работе!
+2026-08-07 18:01:40 - telegram_handlers - INFO - 📱 Нажмите /start в Telegram для начала работы
+2026-08-07 18:01:40 - telegram_handlers - INFO - ==================================================
+2026-08-07 18:01:49 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 18:01:49 - telegram_handlers - INFO - 👤 Новый пользователь: 462035571 (chat_id: 462035571)
+2026-08-07 18:01:49 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/sendMessage "HTTP/1.1 200 OK"
+2026-08-07 18:01:59 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 18:02:10 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 18:02:11 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 18:02:11 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 15:02:11
+2026-08-07 18:02:11 - exchange - INFO - 🔍 FHEUSDT | funding=0.0272% | next=2026-08-07 16:00:00 UTC | minutes=57
+2026-08-07 18:02:11 - exchange - INFO - 🔍 TACUSDT | funding=0.0552% | next=2026-08-07 16:00:00 UTC | minutes=57
+2026-08-07 18:02:11 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0320% | next=2026-08-07 16:00:00 UTC | minutes=57
+2026-08-07 18:02:11 - exchange - INFO - 🔍 WAVESUSDT | funding=0.0260% | next=2026-08-07 16:00:00 UTC | minutes=57
+2026-08-07 18:02:11 - exchange - INFO - ==================================================
+2026-08-07 18:02:11 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 18:02:11 - exchange - INFO - ==================================================
+2026-08-07 18:02:11 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 18:02:11 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 18:02:11 - exchange - INFO -   Funding > 0:              210
+2026-08-07 18:02:11 - exchange - INFO -   Funding >= 0.02%:         4
+2026-08-07 18:02:11 - exchange - INFO -   Funding >= 0.05%:         4
+2026-08-07 18:02:11 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 18:02:11 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 18:02:11 - exchange - INFO - --------------------------------------------------
+2026-08-07 18:02:11 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 18:02:11 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 18:02:11 - exchange - INFO - ==================================================
+2026-08-07 18:02:11 - telegram_handlers - INFO - 📊 Статус обновлен: 0 кандидатов
+2026-08-07 18:02:20 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 18:02:31 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 18:02:41 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 18:02:41 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 15:02:41
+2026-08-07 18:02:41 - exchange - INFO - 🔍 FHEUSDT | funding=0.0272% | next=2026-08-07 16:00:00 UTC | minutes=57
+2026-08-07 18:02:41 - exchange - INFO - 🔍 TACUSDT | funding=0.0552% | next=2026-08-07 16:00:00 UTC | minutes=57
+2026-08-07 18:02:41 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0320% | next=2026-08-07 16:00:00 UTC | minutes=57
+2026-08-07 18:02:41 - exchange - INFO - 🔍 WAVESUSDT | funding=0.0260% | next=2026-08-07 16:00:00 UTC | minutes=57
+2026-08-07 18:02:41 - exchange - INFO - ==================================================
+2026-08-07 18:02:41 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 18:02:41 - exchange - INFO - ==================================================
+2026-08-07 18:02:41 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 18:02:41 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 18:02:41 - exchange - INFO -   Funding > 0:              210
+2026-08-07 18:02:41 - exchange - INFO -   Funding >= 0.02%:         4
+2026-08-07 18:02:41 - exchange - INFO -   Funding >= 0.05%:         4
+2026-08-07 18:02:41 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 18:02:41 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 18:02:41 - exchange - INFO - --------------------------------------------------
+2026-08-07 18:02:41 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 18:02:41 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 18:02:41 - exchange - INFO - ==================================================
+2026-08-07 18:02:41 - telegram_handlers - INFO - 📊 Статус обновлен: 0 кандидатов
+2026-08-07 18:02:41 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 18:02:52 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 18:03:02 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 18:03:06 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 18:03:07 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/sendMessage "HTTP/1.1 200 OK"
+2026-08-07 18:03:11 - exchange - INFO - ✅ Загружено 805 тикеров
+2026-08-07 18:03:11 - exchange - INFO - 🕐 Текущее время UTC: 2026-08-07 15:03:11
+2026-08-07 18:03:11 - exchange - INFO - 🔍 FHEUSDT | funding=0.0264% | next=2026-08-07 16:00:00 UTC | minutes=56
+2026-08-07 18:03:11 - exchange - INFO - 🔍 TACUSDT | funding=0.0541% | next=2026-08-07 16:00:00 UTC | minutes=56
+2026-08-07 18:03:11 - exchange - INFO - 🔍 TRIAUSDT | funding=0.0313% | next=2026-08-07 16:00:00 UTC | minutes=56
+2026-08-07 18:03:11 - exchange - INFO - 🔍 WAVESUSDT | funding=0.0257% | next=2026-08-07 16:00:00 UTC | minutes=56
+2026-08-07 18:03:11 - exchange - INFO - ==================================================
+2026-08-07 18:03:11 - exchange - INFO - 📊 СТАТИСТИКА СКАНИРОВАНИЯ
+2026-08-07 18:03:11 - exchange - INFO - ==================================================
+2026-08-07 18:03:11 - exchange - INFO -   Всего USDT фьючерсов:     805
+2026-08-07 18:03:11 - exchange - INFO -   Есть спотовый рынок:      294
+2026-08-07 18:03:11 - exchange - INFO -   Funding > 0:              211
+2026-08-07 18:03:11 - exchange - INFO -   Funding >= 0.02%:         4
+2026-08-07 18:03:11 - exchange - INFO -   Funding >= 0.05%:         4
+2026-08-07 18:03:11 - exchange - INFO -   До выплаты <= 10 мин: 0
+2026-08-07 18:03:11 - exchange - INFO -   Объем >= $1,000,000: 0
+2026-08-07 18:03:11 - exchange - INFO - --------------------------------------------------
+2026-08-07 18:03:11 - exchange - INFO -   ✅ ГОТОВЫ К ВХОДУ:        0
+2026-08-07 18:03:11 - exchange - INFO -   ⏳ Будут готовы < 60 мин: 0
+2026-08-07 18:03:11 - exchange - INFO - ==================================================
+2026-08-07 18:03:11 - telegram_handlers - INFO - 📊 Статус обновлен: 0 кандидатов
+2026-08-07 18:03:17 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 18:03:27 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 18:03:34 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-08-07 18:03:34 - telegram.ext.Application - WARNING - Fetching updates got a asyncio.CancelledError. Ignoring as this task may onlybe closed via `Application.stop`.
+2026-08-07 18:03:34 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2026-08-07 18:03:34 - telegram.ext.Application - INFO - Application.stop() complete
+2026-08-07 18:03:34 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8892372438:AAFcEA3SIRY3056MQ6pNr0Ci8VC1JU0gSr8/getUpdates "HTTP/1.1 200 OK"
+2026-08-07 18:03:34 - telegram_handlers - INFO - 👋 Бот завершил работу
+2026-08-07 18:03:34 - root - INFO - 👋 Бот завершил работу

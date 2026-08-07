@@ -14,13 +14,13 @@ class Config:
     BYBIT_API_SECRET = os.getenv('BYBIT_API_SECRET', '')
     
     # Filter settings
-    MIN_FUNDING_RATE = float(os.getenv('MIN_FUNDING_RATE', 0.02))  # 0.02% для тестов
+    MIN_FUNDING_RATE = float(os.getenv('MIN_FUNDING_RATE', 0.02))
     MAX_MINUTES_TO_FUNDING = int(os.getenv('MAX_MINUTES_TO_FUNDING', 10))
     MIN_VOLUME_USD = int(os.getenv('MIN_VOLUME_USD', 1000000))
     
     # Notification settings
-    NOTIFY_NEAR_FUNDING = bool(os.getenv('NOTIFY_NEAR_FUNDING', True))  # Уведомлять о "скоро"
-    NEAR_MINUTES_THRESHOLD = int(os.getenv('NEAR_MINUTES_THRESHOLD', 60))  # 60 минут
+    NOTIFY_NEAR_FUNDING = os.getenv('NOTIFY_NEAR_FUNDING', 'true').lower() == 'true'
+    NEAR_MINUTES_THRESHOLD = int(os.getenv('NEAR_MINUTES_THRESHOLD', 60))
     
     # Commission rates
     SPOT_MAKER_FEE = float(os.getenv('SPOT_MAKER_FEE', 0.1))

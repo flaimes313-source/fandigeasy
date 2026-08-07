@@ -23,6 +23,10 @@ class BybitExchange:
         self.tickers_cache: Optional[Dict] = None
         self.tickers_cache_time = 0
         self.tickers_cache_duration = 10  # 10 секунд
+        
+        # Для хранения статистики (для команды /status)
+        self._last_stats: Optional[Dict] = None
+        self._last_scan_time: Optional[str] = None
 
     def get_spot_symbols(self) -> Set[str]:
         """Получить список всех спотовых символов"""
@@ -66,6 +70,14 @@ class BybitExchange:
         
         return {}
 
+    def get_last_stats(self) -> Dict:
+        """Получить последнюю статистику для команды /status"""
+        return self._last_stats
+    
+    def get_last_scan_time(self) -> str:
+        """Получить время последнего сканирования"""
+        return self._last_scan_time
+
     def get_funding_candidates(self) -> List[Dict]:
         """
         Получить все кандидаты с положительным фандингом
@@ -91,6 +103,8 @@ class BybitExchange:
         tickers = self.get_all_tickers("linear")
         if not tickers:
             logger.warning("❌ Нет данных о тикерах")
+            self._last_stats = stats
+            self._last_scan_time = datetime.utcfromtimestamp(int(time.time())).strftime('%Y-%m-%d %H:%M:%S UTC')
             return candidates
         
         # 2. Получаем спотовые символы (1 запрос, кешируется)
@@ -103,6 +117,9 @@ class BybitExchange:
         
         # Логируем время для диагностики
         logger.info(f"🕐 Текущее время UTC: {datetime.utcfromtimestamp(current_time_sec).strftime('%Y-%m-%d %H:%M:%S')}")
+        
+        # Счетчик для дебага
+        debug_count = 0
         
         for symbol, ticker in tickers.items():
             # Только USDT фьючерсы
@@ -151,8 +168,8 @@ class BybitExchange:
             next_funding_time_sec = int(next_funding_time_ms) // 1000
             minutes_to_funding = (next_funding_time_sec - current_time_sec) // 60
             
-            # ДИАГНОСТИКА: выводим время для монет с высоким funding
-            if funding_rate >= 0.05:
+            # ДИАГНОСТИКА: выводим время для монет с высоким funding (первые 10)
+            if debug_count < 10 and funding_rate >= 0.02:
                 next_time_str = datetime.utcfromtimestamp(next_funding_time_sec).strftime('%Y-%m-%d %H:%M:%S')
                 logger.info(
                     f"🔍 {symbol} | "
@@ -160,6 +177,7 @@ class BybitExchange:
                     f"next={next_time_str} UTC | "
                     f"minutes={minutes_to_funding}"
                 )
+                debug_count += 1
             
             # Получаем объем в USDT (используем turnover24h!)
             volume_usd = float(ticker.get('turnover24h', 0))
@@ -216,6 +234,10 @@ class BybitExchange:
                     'next_funding_time': next_funding_time_sec,
                     'status': 'near'  # Скоро будет готов
                 })
+        
+        # Сохраняем статистику для команды /status
+        self._last_stats = stats
+        self._last_scan_time = datetime.utcfromtimestamp(current_time_sec).strftime('%Y-%m-%d %H:%M:%S UTC')
         
         # Выводим полную статистику
         self._log_stats(stats, near_candidates)
@@ -279,4 +301,6 @@ class BybitExchange:
         self.tickers_cache_time = 0
         self.spot_symbols_cache = None
         self.last_cache_update = 0
+        self._last_stats = None
+        self._last_scan_time = None
         logger.info("🗑 Кеш очищен")

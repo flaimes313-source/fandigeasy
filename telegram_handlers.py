@@ -1,5 +1,6 @@
 import logging
 import asyncio
+from datetime import datetime
 from typing import Dict, List, Optional
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
@@ -27,8 +28,15 @@ class TelegramHandler:
         self.user_states: Dict[int, Dict] = {}
         self.user_chats: List[int] = []
         
+        # Храним последние результаты сканирования
+        self.last_scan_stats: Optional[Dict] = None
+        self.last_scan_time: Optional[str] = None
+        self.last_candidates: List[Dict] = []
+        self.scan_completed = False
+        
         # Добавляем callback для сканера
         self.scanner.add_callback(self.on_candidates_found)
+        self.scanner.add_status_callback(self.on_status_update)
         
         # Настраиваем обработчики команд
         self.setup_handlers()
@@ -42,6 +50,9 @@ class TelegramHandler:
         self.application.add_handler(CommandHandler("start", self.start_command))
         self.application.add_handler(CommandHandler("settings", self.settings_command))
         self.application.add_handler(CommandHandler("help", self.help_command))
+        self.application.add_handler(CommandHandler("status", self.status_command))
+        self.application.add_handler(CommandHandler("stop", self.stop_command))
+        self.application.add_handler(CommandHandler("resume", self.resume_command))
         
         self.application.add_handler(CallbackQueryHandler(
             self.amount_callback, 
@@ -54,6 +65,17 @@ class TelegramHandler:
         ))
         
         self.application.add_error_handler(self.error_handler)
+
+    async def on_status_update(self, stats: Dict, scan_time: str, candidates: List[Dict]):
+        """Callback для обновления статуса"""
+        try:
+            self.last_scan_stats = stats
+            self.last_scan_time = scan_time
+            self.last_candidates = candidates
+            self.scan_completed = True
+            logger.info(f"📊 Статус обновлен: {stats.get('candidates', 0)} кандидатов")
+        except Exception as e:
+            logger.error(f"Ошибка обновления статуса: {e}")
 
     async def start_scanner(self):
         """Запуск сканера в фоновом режиме"""
@@ -77,28 +99,151 @@ class TelegramHandler:
         welcome_text = (
             "🤖 Funding Arbitrage Bot\n"
             "========================\n\n"
-            "Бот сканирует Bybit и находит возможности арбитража по фандингу.\n\n"
-            "🔍 Как работает:\n"
-            "• Каждые 30 секунд проверяются все USDT фьючерсы\n"
-            "• Ищутся монеты с фандингом >= 0.05%\n"
-            "• До выплаты остается <= 10 минут\n"
+            "🔍 ПОИСК ФАНДИНГА ЗАПУЩЕН!\n\n"
+            "Бот сканирует Bybit каждые 30 секунд\n"
+            "и ищет возможности арбитража.\n\n"
+            "📊 Как работает:\n"
+            "• Проверяются все USDT фьючерсы\n"
+            "• Ищутся монеты с фандингом >= 0.02%\n"
             "• Проверяется наличие спотового рынка\n"
-            "• Проверяется ликвидность (объем >= $1M)\n\n"
-            "📊 Когда находится кандидат:\n"
-            "• Вы получите уведомление в боте\n"
-            "• Выберите сумму или введите свою\n"
-            "• Бот рассчитает потенциальную прибыль\n\n"
-            "⚠️ Важно:\n"
-            "• Бот только информирует, решение принимаете вы\n"
-            "• Арбитраж связан с рисками\n"
-            "• Всегда проверяйте расчеты самостоятельно\n\n"
-            "💰 Доступные команды:\n"
-            "/start - показать это сообщение\n"
+            "• Проверяется ликвидность\n\n"
+            "📋 Команды:\n"
+            "/status - показать результаты последнего сканирования\n"
+            "/stop - остановить сканирование\n"
+            "/resume - возобновить сканирование\n"
             "/settings - показать настройки бота\n"
-            "/help - помощь"
+            "/help - помощь\n\n"
+            "⏳ Ожидайте уведомлений о найденных кандидатах!"
         )
         
         await update.message.reply_text(welcome_text)
+
+    async def stop_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+        """Остановить сканирование"""
+        chat_id = update.effective_chat.id
+        
+        if not self.scanner_started:
+            await update.message.reply_text(
+                "❌ Сканер еще не запущен.\n"
+                "Используйте /start для запуска."
+            )
+            return
+        
+        if self.scanner.pause():
+            await update.message.reply_text(
+                "⏸ Сканирование остановлено\n\n"
+                "Бот больше не сканирует рынок.\n"
+                "Чтобы возобновить, используйте /resume"
+            )
+        else:
+            await update.message.reply_text(
+                "⚠️ Сканер уже остановлен или не запущен.\n"
+                "Используйте /resume для возобновления."
+            )
+
+    async def resume_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+        """Возобновить сканирование"""
+        chat_id = update.effective_chat.id
+        
+        if not self.scanner_started:
+            await update.message.reply_text(
+                "❌ Сканер еще не запущен.\n"
+                "Используйте /start для запуска."
+            )
+            return
+        
+        if self.scanner.resume():
+            await update.message.reply_text(
+                "▶️ Сканирование возобновлено\n\n"
+                "Бот снова сканирует рынок.\n"
+                "Ожидайте уведомлений о кандидатах!"
+            )
+        else:
+            await update.message.reply_text(
+                "⚠️ Сканер уже работает или не был остановлен.\n"
+                "Используйте /stop для остановки."
+            )
+
+    async def status_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+        """Обработчик команды /status - показывает результаты последнего сканирования"""
+        chat_id = update.effective_chat.id
+        
+        # Проверяем, было ли хотя бы одно сканирование
+        if not self.scan_completed or not self.last_scan_stats:
+            status_text = (
+                "⏳ СТАТУС: Статистика еще не доступна\n"
+                "====================================\n\n"
+                "Бот только что запущен. Первое сканирование выполняется...\n"
+                "Пожалуйста, подождите 5-10 секунд и попробуйте снова.\n\n"
+                "🔄 Статус сканера: "
+            )
+            
+            if self.scanner_started:
+                if self.scanner.is_paused:
+                    status_text += "Остановлен ⏸"
+                else:
+                    status_text += "Запущен ✅"
+            else:
+                status_text += "Запускается... ⏳"
+            
+            await update.message.reply_text(status_text)
+            return
+        
+        # Формируем статусное сообщение (БЕЗ HTML!)
+        stats = self.last_scan_stats
+        
+        # Статус сканера
+        scanner_status = "⏸ Остановлен" if self.scanner.is_paused else "✅ Активен"
+        
+        status_text = (
+            f"📊 СТАТУС СКАНИРОВАНИЯ\n"
+            f"🕐 {self.last_scan_time}\n"
+            f"🔄 Сканер: {scanner_status}\n"
+            f"{'=' * 30}\n\n"
+            f"📈 ОБЩАЯ СТАТИСТИКА:\n"
+            f"  • Всего USDT фьючерсов:     {stats.get('total', 0)}\n"
+            f"  • Есть спотовый рынок:      {stats.get('has_spot', 0)}\n"
+            f"  • Funding > 0:              {stats.get('funding_positive', 0)}\n"
+            f"  • Funding >= 0.02%:         {stats.get('funding_002', 0)}\n"
+            f"  • Funding >= 0.05%:         {stats.get('funding_005', 0)}\n"
+            f"  • До выплаты <= 10 мин:    {stats.get('time_ok', 0)}\n"
+            f"  • Объем >= $1,000,000:      {stats.get('volume_ok', 0)}\n\n"
+            f"🎯 РЕЗУЛЬТАТ:\n"
+            f"  ✅ Готовы к входу:          {stats.get('candidates', 0)}\n"
+            f"  ⏳ Будут готовы < 60 мин:   {stats.get('near_funding', 0)}\n"
+        )
+        
+        # Если есть кандидаты, показываем их
+        if self.last_candidates:
+            ready_candidates = [c for c in self.last_candidates if c.get('status') == 'ready']
+            near_candidates = [c for c in self.last_candidates if c.get('status') == 'near']
+            
+            if ready_candidates:
+                status_text += f"\n🟢 ГОТОВЫЕ КАНДИДАТЫ:\n"
+                for c in ready_candidates[:5]:
+                    status_text += f"  • {c['symbol']}: {c['funding_rate']:.3f}% через {c['minutes_to_funding']} мин\n"
+                if len(ready_candidates) > 5:
+                    status_text += f"  ... и еще {len(ready_candidates) - 5}\n"
+            
+            if near_candidates:
+                status_text += f"\n🟡 БУДУТ ГОТОВЫ СКОРО:\n"
+                for c in near_candidates[:5]:
+                    status_text += f"  • {c['symbol']}: {c['funding_rate']:.3f}% через {c['minutes_to_funding']} мин\n"
+                if len(near_candidates) > 5:
+                    status_text += f"  ... и еще {len(near_candidates) - 5}\n"
+        else:
+            status_text += "\n📭 Нет активных кандидатов"
+        
+        status_text += (
+            f"\n\n{'=' * 30}\n"
+            f"🔄 Следующее сканирование через {Config.SCAN_INTERVAL} сек\n"
+            f"⏳ Бот продолжает работу в фоновом режиме"
+        )
+        
+        if self.scanner.is_paused:
+            status_text += "\n\n⏸ Сканирование остановлено\nИспользуйте /resume для возобновления"
+        
+        await update.message.reply_text(status_text)
 
     async def settings_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """Обработчик команды /settings"""
@@ -110,12 +255,13 @@ class TelegramHandler:
         )
         
         settings_text = (
-            "⚙️ Текущие настройки\n"
+            "⚙️ ТЕКУЩИЕ НАСТРОЙКИ\n"
             "===================\n\n"
             f"📊 Минимальный фандинг: {Config.MIN_FUNDING_RATE}%\n"
             f"⏱ Макс время до выплаты: {Config.MAX_MINUTES_TO_FUNDING} мин\n"
             f"💰 Минимальный объем: ${Config.MIN_VOLUME_USD:,.0f}\n"
-            f"🔄 Интервал сканирования: {Config.SCAN_INTERVAL} сек\n\n"
+            f"🔄 Интервал сканирования: {Config.SCAN_INTERVAL} сек\n"
+            f"⏳ Уведомлять о кандидатах < 60 мин: {Config.NOTIFY_NEAR_FUNDING}\n\n"
             "📝 Комиссии Bybit:\n"
             f"  • Спот покупка: {Config.SPOT_MAKER_FEE}%\n"
             f"  • Спот продажа: {Config.SPOT_TAKER_FEE}%\n"
@@ -132,27 +278,25 @@ class TelegramHandler:
     async def help_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """Обработчик команды /help"""
         help_text = (
-            "🆘 Помощь\n"
+            "🆘 ПОМОЩЬ\n"
             "========\n\n"
-            "1️⃣ Как получить уведомления?\n"
-            "Просто запустите бота командой /start\n"
-            "Бот автоматически начнет сканирование\n\n"
-            "2️⃣ Что делать при уведомлении?\n"
-            "• Нажмите на одну из предложенных сумм\n"
-            "• Или введите свою сумму в чат\n"
-            "• Бот рассчитает прибыль\n\n"
-            "3️⃣ Какие суммы вводить?\n"
-            "• Рекомендуется от $100\n"
-            "• Учитывайте комиссии\n"
-            "• Не вкладывайте все средства\n\n"
-            "4️⃣ Почему прибыль отрицательная?\n"
-            "• Фандинг слишком низкий\n"
-            "• Комиссии съедают прибыль\n"
-            "• Нужен фандинг > 0.6%\n\n"
-            "5️⃣ Это безопасно?\n"
-            "• Бот не торгует, только информирует\n"
-            "• Риски арбитража: проскальзывание, ликвидность\n"
-            "• Всегда проверяйте расчеты сами"
+            "📋 Команды:\n"
+            "/start - запустить бота и сканирование\n"
+            "/status - показать результаты последнего сканирования\n"
+            "/stop - остановить сканирование\n"
+            "/resume - возобновить сканирование\n"
+            "/settings - показать настройки\n"
+            "/help - это сообщение\n\n"
+            "🔍 Как это работает:\n"
+            "1. Бот сканирует Bybit каждые 30 секунд\n"
+            "2. Находит монеты с высоким фандингом\n"
+            "3. Проверяет наличие спота и ликвидность\n"
+            "4. Отправляет уведомление в Telegram\n"
+            "5. Вы вводите сумму для расчета прибыли\n\n"
+            "⚠️ ВАЖНО:\n"
+            "• Бот только информирует\n"
+            "• Решение о входе принимаете вы\n"
+            "• Арбитраж связан с рисками"
         )
         
         await update.message.reply_text(help_text)
@@ -164,11 +308,37 @@ class TelegramHandler:
             
         logger.info(f"📊 Найдено {len(candidates)} кандидатов")
         
+        # Сохраняем результаты для команды /status
+        self.last_candidates = candidates
+        
+        # Отправляем только готовых кандидатов (status == 'ready')
+        ready_candidates = [c for c in candidates if c.get('status') == 'ready']
+        near_candidates = [c for c in candidates if c.get('status') == 'near']
+        
         for chat_id in self.user_chats:
             try:
-                for candidate in candidates[:3]:
+                # Отправляем готовых кандидатов
+                for candidate in ready_candidates[:3]:
                     await self.send_candidate(chat_id, candidate)
                     await asyncio.sleep(0.5)
+                
+                # Если есть кандидаты "скоро" и включено уведомление
+                if near_candidates and Config.NOTIFY_NEAR_FUNDING:
+                    near_message = (
+                        "⏳ СКОРО БУДУТ ГОТОВЫ КАНДИДАТЫ:\n\n"
+                    )
+                    for c in near_candidates[:5]:
+                        near_message += f"• {c['symbol']}: {c['funding_rate']:.3f}% через {c['minutes_to_funding']} мин\n"
+                    if len(near_candidates) > 5:
+                        near_message += f"... и еще {len(near_candidates) - 5}\n"
+                    near_message += "\nСледите за обновлениями!"
+                    
+                    await self.application.bot.send_message(
+                        chat_id=chat_id,
+                        text=near_message
+                    )
+                    await asyncio.sleep(0.5)
+                    
             except Exception as e:
                 logger.error(f"Ошибка отправки пользователю {chat_id}: {e}")
                 if "bot was blocked" in str(e).lower():
@@ -190,8 +360,12 @@ class TelegramHandler:
             'minutes': minutes
         }
         
+        # Определяем статус
+        status_emoji = "🟢" if candidate.get('status') == 'ready' else "🟡"
+        status_text = "ГОТОВ К ВХОДУ!" if candidate.get('status') == 'ready' else "Будет готов скоро"
+        
         message = (
-            f"🔔 Найден кандидат!\n"
+            f"🔔 {status_emoji} {status_text}\n"
             f"==================\n\n"
             f"📊 Монета: {symbol}\n"
             f"💰 Funding: +{funding_rate:.3f}%\n"
@@ -358,12 +532,21 @@ class TelegramHandler:
     async def error_handler(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """Обработчик ошибок"""
         logger.error(f"Ошибка: {context.error}")
+        
+        # Отправляем сообщение об ошибке только если это не команда /status
         if update and update.effective_chat:
             try:
-                await context.bot.send_message(
-                    chat_id=update.effective_chat.id,
-                    text="❌ Произошла ошибка. Бот продолжает работу."
-                )
+                # Проверяем, была ли это команда /status
+                if update.message and update.message.text and update.message.text.startswith('/status'):
+                    await context.bot.send_message(
+                        chat_id=update.effective_chat.id,
+                        text="❌ Произошла ошибка при получении статуса.\nПожалуйста, попробуйте через несколько секунд."
+                    )
+                else:
+                    await context.bot.send_message(
+                        chat_id=update.effective_chat.id,
+                        text="❌ Произошла ошибка. Бот продолжает работу."
+                    )
             except:
                 pass
 
@@ -372,7 +555,7 @@ class TelegramHandler:
         try:
             logger.info("🚀 Запуск Telegram бота...")
             
-            # ВАЖНО: удаляем webhook с очисткой
+            # Удаляем webhook с очисткой
             await self.application.bot.delete_webhook(drop_pending_updates=True)
             logger.info("✅ Webhook очищен")
             
@@ -382,9 +565,9 @@ class TelegramHandler:
             await self.application.initialize()
             await self.application.start()
             
-            # ЗАПУСКАЕМ POLLING С ОЧИСТКОЙ
+            # Запускаем polling
             await self.application.updater.start_polling(
-                drop_pending_updates=True,  # <-- ГЛАВНОЕ ИЗМЕНЕНИЕ!
+                drop_pending_updates=True,
                 poll_interval=0.5,
                 timeout=10
             )
